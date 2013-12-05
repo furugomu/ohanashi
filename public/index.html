@@ -2,16 +2,21 @@
 <html lang=ja ng-app="unko">
  <head>
   <meta charset=UTF-8>
-  <title>おはなしを作る</title>
+  <title>おはなしジェネレーター for アイドルマスターミリオンライブ！</title>
   <meta name="viewport" content="width=device-width">
   <link rel=stylesheet href=bootstrap/css/bootstrap.min.css>
+  <link rel=stylesheet href=bootstrap/css/bootstrap-theme.min.css>
   <link rel=stylesheet href=hoge.css>
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-resource.min.js"></script>
   <script src="hoge.js"></script>
  </head>
  <body ng-controller=Ctrl>
-  <h1>おはなしを作る</h1>
+  <header class="jumbotron">
+   <h1>おはなしジェネレーター</h1>
+   <p>アイドルマスターミリオンライブ！ のおはなしを作ろう！</p>
+  </header>
+
 
   <div class="container">
    <section id="select-idol">
@@ -68,7 +73,7 @@
    </section>
 
    <section>
-    <h2>完成品</h2>
+    <h2>プレビュー</h2>
     <p><label><input type=checkbox ng-model="editting">編集モード</label></p>
     <p ng-show="paragraphs.length == 0">
      まだありません。
@@ -99,6 +104,10 @@
      <p>
       <button type=submit class="btn btn-primary"
        ng-disabled="paragraphs.length == 0">画像を保存する</button>
+     </p>
+     <p>
+      画像内の文字は<a href="http://ipafont.ipa.go.jp/">IPAフォント</a>
+      を利用しています。
      </p>
     </form>
    </section>
