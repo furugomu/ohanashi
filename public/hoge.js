@@ -1,4 +1,4 @@
-var app = angular.module("unko", []);
+var app = angular.module("ohanashi", []);
 app.controller('Ctrl', function($scope, $http) {
   $scope.search = {type: ""};
   $scope.selected = {};
