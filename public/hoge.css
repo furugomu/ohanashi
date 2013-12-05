@@ -1,6 +1,15 @@
 footer {
   margin-top: 400px;
 }
+@media (max-width: 320px) {
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.nav > li > a {
+  padding: 5px 8px;
+}
 
 .face.icon {
   width: 38px;
@@ -58,8 +67,10 @@ footer {
   position: absolute;
   top: 19px;
   left: 5px;
+  white-space: pre;
 }
 
 textarea {
   max-width: 320px;
+}
 }
