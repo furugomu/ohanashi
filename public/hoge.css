@@ -1,8 +1,15 @@
+body {
+  margin-bottom: 400px;
+}
+
 .face.icon {
   width: 38px;
 }
 .face {
   width: 76px;
+}
+.face.select {
+  cursor: pointer;
 }
 
 .scenario {
@@ -51,4 +58,8 @@
   position: absolute;
   top: 19px;
   left: 5px;
+}
+
+textarea {
+  max-width: 320px;
 }

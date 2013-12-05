@@ -33,9 +33,9 @@
     <ul class="nav nav-pills">
      <li ng-repeat="idol in idols | filter:search | filter:searchText"
       ng-click="selected.idol = idol"
-      ng-class="{active: selected.idol == idol}">
+      ng-class="{active: selected.idol.id == idol.id}">
       <a>
-       <img class="face icon" ng-src="{{idol.images[0]}}">
+       <img class="face icon select" ng-src="{{idol.images[0]}}">
       </a>
      </li>
     </ul>
@@ -45,48 +45,61 @@
     <div class="tab-content">
      <div class="tab-pane active">
       <span ng-repeat="src in selected.idol.images">
-       <img ng-src="{{src}}" alt="" ng-click="selected.index = $index" class="face">
+       <img ng-src="{{src}}" alt="" ng-click="selected.imageIndex = $index" class="face select">
       </span>
      </div>
     </div>
    </section>
 
    <!-- せりふをつくる -->
-   <section>
-    <h2>せりふを考える</h2>
-    <p><textarea ng-model="serifu" rows=4 cols=60></textarea></p>
-   </section>
-
    <section id="preview">
-    <h2>確認する</h2>
+    <h2>せりふを考える</h2>
     <div class="scenario">
      <div class="paragraph">
-      <img ng-src="{{selected.idol.images[selected.index]}}" class=face>
+      <img ng-src="{{selected.idol.images[selected.imageIndex]}}" class=face>
       <div class="fukidashi">
        <p class="name">{{selected.idol.name}}</p>
-       <pre class="serifu">{{serifu}}</pre>
+       <pre class="serifu">{{selected.text}}</pre>
       </div>
      </div>
     </div>
+    <p><textarea ng-model="selected.text" rows=2 cols=60></textarea></p>
     <p><button ng-click="addParagraph()" class="btn btn-default">↓追加↓</button></p>
    </section>
 
    <section>
     <h2>完成品</h2>
+    <p><label><input type=checkbox ng-model="editting">編集モード</label></p>
+    <p ng-show="paragraphs.length == 0">
+     まだありません。
+    </p>
     <form action="/image" method="post">
      <div class="scenario">
-      <div class="paragraph" ng-repeat="p in scenario.paragraphs">
-       <img ng-src="{{p.image}}" class=face>
-       <div class="fukidashi">
-        <p class="name">{{p.idol.name}}</p>
-        <pre class="serifu">{{p.serifu}}</pre>
+      <div ng-repeat="p in paragraphs">
+       <div class="paragraph">
+        <img ng-src="{{p.idol.images[p.imageIndex]}}" class=face>
+        <div class="fukidashi">
+         <p class="name">{{p.idol.name}}</p>
+         <pre class="serifu">{{p.text}}</pre>
+        </div>
+        <input type=hidden name=ids[] value="{{p.idol.id}}">
+        <input type=hidden name=images[] value="{{p.imageIndex}}">
+        <input type=hidden name=texts[] value="{{p.text}}">
        </div>
-       <input type=hidden name=ids[] value="{{p.idol.id}}">
-       <input type=hidden name=images[] value="{{p.imageIndex}}">
-       <input type=hidden name=texts[] value="{{p.serifu}}">
+       <div ng-show="editting">
+        <button class=btn type=button ng-disabled="$first"
+         ng-click="moveup(paragraphs, $index)">↑</button>
+        <button class=btn type=button ng-disabled="$last"
+         ng-click="movedown(paragraphs, $index)">↓</button>
+        <button class="btn btn-danger" type=button
+         ng-click="paragraphs.splice($i, 1)">削除</button>
+       </div>
       </div>
      </div>
-     <p><button type=submit class="btn btn-primary">画像を保存する</button></p>
+     <p>
+      <button type=submit class="btn btn-primary"
+       ng-disabled="paragraphs.length == 0">画像を保存する</button>
+     </p>
     </form>
    </section>
 
