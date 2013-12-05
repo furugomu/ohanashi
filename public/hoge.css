@@ -1,0 +1,54 @@
+.face.icon {
+  width: 38px;
+}
+.face {
+  width: 76px;
+}
+
+.scenario {
+  width: 320px;
+  background: black url(http://m.ip.bn765.com/21002c9b1d8) repeat-y;
+  background-size: 320px 5px;
+  margin: 1em 0;
+}
+.paragraph {
+  width: 320px;
+  height: 84px;
+  position: relative;
+}
+.paragraph * {
+  margin: 0; padding: 0;
+  border: none;
+}
+.paragraph .face, .fukidashi {
+  top: 4px;
+}
+.paragraph .face {
+  position: absolute;
+  left: 5px;
+  width: 76px;
+}
+.fukidashi {
+  position: absolute;
+  right: 9px;
+  background: url(http://m.ip.bn765.com/21006e59e67) no-repeat;
+  background-size: 224px 76px;
+  width: 224px;
+  height: 76px;
+}
+.fukidashi .name, .fukidashi .serifu {
+  font: bold 13px/15px "Arial", sans-serif;
+  color: black;
+  background-color: white;
+}
+.fukidashi .name {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  color: #f33281;
+}
+.fukidashi .serifu {
+  position: absolute;
+  top: 19px;
+  left: 5px;
+}
