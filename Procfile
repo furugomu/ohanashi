@@ -1,1 +1,1 @@
-web: bundle exec rackup -p $PORT
+web: bundle exec thin start --rackup config.ru -p $PORT --threaded
