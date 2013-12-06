@@ -573,3 +573,10 @@
   images:
     - images/2100994b563_0.png
     - images/2100994b563_1.png
+-
+  name: 島村卯月
+  yomi: しまむらうづき
+  id: uzuki
+  type: ex
+  images:
+    - images/0dabb79ff64691111a0abae2ffed01ce.png
