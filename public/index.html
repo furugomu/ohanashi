@@ -16,7 +16,6 @@
    <p>アイドルマスターミリオンライブ！ のおはなしを作ろう！</p>
   </header>
 
-
   <div class="container">
    <section id="select-idol">
     <h2>アイドルを選ぶ</h2>
@@ -76,8 +75,9 @@
    <section>
     <h2>プレビュー</h2>
     <p><label><input type=checkbox ng-model="editting">編集モード</label></p>
-    <p ng-show="paragraphs.length == 0">
-     まだありません。
+    <p ng-show="paragraphs.length == 0" class="alert alert-warning">
+     スマートフォン等、環境によっては画像を保存できないことがあります。
+     長いおはなしを作る前に短いので試してください。
     </p>
     <form action="/image" method="post">
      <div class="scenario">
