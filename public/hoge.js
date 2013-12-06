@@ -13,6 +13,8 @@ app.controller('Ctrl', function($scope, $http) {
 
   $scope.select = function(idol) {
     $scope.selected.idol = idol;
+    if ($scope.selected.imageIndex >= idol.images.length)
+      $scope.selected.imageIndex = 0;
     if (!$scope.selected.text && idol.default_text)
       $scope.selected.text = idol.default_text;
   }
