@@ -583,3 +583,16 @@
   type: ex
   images:
     - images/0dabb79ff64691111a0abae2ffed01ce.png
+-
+  name: 高森藍子
+  yomi: たかもりあいこ
+  id: aiko
+  type: ex
+  images:
+    - images/aiko-ay-0.png
+    - images/aiko-ay-1.png
+    - images/aiko-ay-2.png
+    - images/aiko-ay-3.png
+    - images/aiko-ay-4.png
+    - images/aiko-ay-5.png
+    - images/aiko-ay-6.png
