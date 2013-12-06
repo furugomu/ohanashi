@@ -58,17 +58,19 @@
    <!-- せりふをつくる -->
    <section id="preview">
     <h2>せりふを考える</h2>
-    <div class="scenario">
-     <div class="paragraph">
-      <img ng-src="{{selected.idol.images[selected.imageIndex]}}" class=face>
-      <div class="fukidashi">
-       <p class="name">{{selected.idol.name}}</p>
-       <pre class="serifu">{{selected.text}}</pre>
+    <form ng-submit="addParagraph()">
+     <div class="scenario">
+      <div class="paragraph">
+       <img ng-src="{{selected.idol.images[selected.imageIndex]}}" class=face>
+       <div class="fukidashi">
+        <p class="name">{{selected.idol.name}}</p>
+        <pre class="serifu">{{selected.text}}</pre>
+       </div>
       </div>
      </div>
-    </div>
-    <p><textarea ng-model="selected.text" rows=2 cols=60></textarea></p>
-    <p><button ng-click="addParagraph()" class="btn btn-default">↓追加↓</button></p>
+     <p><textarea ng-model="selected.text" rows=2 cols=60></textarea></p>
+     <p><button class="btn btn-default">↓追加↓</button></p>
+    </form>
    </section>
 
    <section>
