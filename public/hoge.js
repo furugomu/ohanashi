@@ -11,6 +11,12 @@ app.controller('Ctrl', function($scope, $http) {
     $scope.selected.imageIndex = 0;
   });
 
+  $scope.select = function(idol) {
+    $scope.selected.idol = idol;
+    if (!$scope.selected.text && idol.default_text)
+      $scope.selected.text = idol.default_text;
+  }
+
   $scope.addParagraph = function() {
     $scope.paragraphs.push(angular.copy($scope.selected));
     $scope.selected.text = '';

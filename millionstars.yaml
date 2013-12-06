@@ -562,3 +562,14 @@
     - http://m.ip.bn765.com/21002769596
     - http://m.ip.bn765.com/21002cc667c
     - http://m.ip.bn765.com/21004ec8097
+-
+  name: カメラマン
+  yomi: かめらまん
+  id: camera
+  type: ex
+  default_text: |-
+    あっ、その表情いいですね!
+    一枚、撮らせてください!
+  images:
+    - images/2100994b563_0.png
+    - images/2100994b563_1.png

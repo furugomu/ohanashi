@@ -36,7 +36,7 @@
 
     <ul class="nav nav-pills">
      <li ng-repeat="idol in idols | filter:search | filter:searchText"
-      ng-click="selected.idol = idol"
+      ng-click="select(idol)"
       ng-class="{active: selected.idol.id == idol.id}">
       <a>
        <img class="face icon select" ng-src="{{idol.images[0]}}">
@@ -96,7 +96,7 @@
         <button class=btn type=button ng-disabled="$last"
          ng-click="movedown(paragraphs, $index)">↓</button>
         <button class="btn btn-danger" type=button
-         ng-click="paragraphs.splice($i, 1)">削除</button>
+         ng-click="paragraphs.splice($index, 1)">削除</button>
        </div>
       </div>
      </div>
