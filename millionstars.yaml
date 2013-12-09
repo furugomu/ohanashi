@@ -603,3 +603,14 @@
   type: ex
   images:
     - images/ichigo.png
+-
+  name: P
+  yomi: ぷろでゅーさー
+  id: p
+  type: ex
+  images:
+    - images/P-suite.png
+    - images/P-bikkuri.png
+    - images/P-gaan.png
+    - images/P-ikari.png
+    - images/P-warai.png
