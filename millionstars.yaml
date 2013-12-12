@@ -596,3 +596,21 @@
     - images/aiko-ay-4.png
     - images/aiko-ay-5.png
     - images/aiko-ay-6.png
+-
+  name: 星宮いちご
+  yomi: ほしみやいちご
+  id: ichigo
+  type: ex
+  images:
+    - images/ichigo.png
+-
+  name: P
+  yomi: ぷろでゅーさー
+  id: p
+  type: ex
+  images:
+    - images/P-suite.png
+    - images/P-bikkuri.png
+    - images/P-gaan.png
+    - images/P-ikari.png
+    - images/P-warai.png
