@@ -6,7 +6,7 @@
 1. ruby や libmagick などをインストールする
 2. bundle
 3. gem install shotgun
-4. shotgun start
+4. shotgun
 
 localhost:9393 で見える。
 
