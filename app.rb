@@ -16,10 +16,6 @@ get '/' do
   send_file File.join(pwd, 'public', 'index.html')
 end
 
-get '/images/:file' do |filename|
-  send_file File.join(pwd, 'images', filename)
-end
-
 get '/millionstars.json' do
   json idols
 end

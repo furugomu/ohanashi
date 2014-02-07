@@ -4,567 +4,567 @@
   id: haruka
   type: vo
   images:
-    - http://m.ip.bn765.com/1100228cfb2
-    - http://m.ip.bn765.com/110003085ce
-    - http://m.ip.bn765.com/1100a78ece6
-    - http://m.ip.bn765.com/110095aee4a
-    - http://m.ip.bn765.com/1100509eb20
+    - images/haruka/1100228cfb2.png
+    - images/haruka/110003085ce.png
+    - images/haruka/1100a78ece6.png
+    - images/haruka/110095aee4a.png
+    - images/haruka/1100509eb20.png
 - # 2
   name: 如月千早
   yomi: きさらぎちはや
   id: chihaya
   type: vo
   images:
-     - http://m.ip.bn765.com/1100f6378a3
-     - http://m.ip.bn765.com/11003b845dd
-     - http://m.ip.bn765.com/1100f7ff991
-     - http://m.ip.bn765.com/110008824e0
-     - http://m.ip.bn765.com/11005127578
+    - images/chihaya/1100f6378a3.png
+    - images/chihaya/11003b845dd.png
+    - images/chihaya/1100f7ff991.png
+    - images/chihaya/110008824e0.png
+    - images/chihaya/11005127578.png
 - # 3:
   name: 星井美希
   yomi: ほしいみき
   id: miki
   type: vi
   images:
-    - http://m.ip.bn765.com/1100a5e0d12
-    - http://m.ip.bn765.com/11004dac1db
-    - http://m.ip.bn765.com/11006232250
-    - http://m.ip.bn765.com/11000b7d935
-    - http://m.ip.bn765.com/1100078f7b6
+    - images/miki/1100a5e0d12.png
+    - images/miki/11004dac1db.png
+    - images/miki/11006232250.png
+    - images/miki/11000b7d935.png
+    - images/miki/1100078f7b6.png
 - # 4:
   name: 萩原雪歩
   yomi: はぎわらゆきほ
   id: yukiho
   type: vi
   images:
-    - http://m.ip.bn765.com/1100b37398f
-    - http://m.ip.bn765.com/110040a0a8e
-    - http://m.ip.bn765.com/1100557379d
-    - http://m.ip.bn765.com/110033769d5
-    - http://m.ip.bn765.com/1100470020e
+    - images/yukiho/1100b37398f.png
+    - images/yukiho/110040a0a8e.png
+    - images/yukiho/1100557379d.png
+    - images/yukiho/110033769d5.png
+    - images/yukiho/1100470020e.png
 - # 5:
   name: 高槻やよい
   yomi: たかつきやよい
   id: yayoi
   type: da
   images:
-    - http://m.ip.bn765.com/11005dee080
-    - http://m.ip.bn765.com/110026312ed
-    - http://m.ip.bn765.com/1100bb9f4f6
-    - http://m.ip.bn765.com/1100f7769e3
-    - http://m.ip.bn765.com/11005d78beb
+    - images/yayoi/11005dee080.png
+    - images/yayoi/110026312ed.png
+    - images/yayoi/1100bb9f4f6.png
+    - images/yayoi/1100f7769e3.png
+    - images/yayoi/11005d78beb.png
 - # 6:
   name: 菊地真
   yomi: きくちまこと
   id: makoto
   type: da
   images:
-    - http://m.ip.bn765.com/11006645f8a
-    - http://m.ip.bn765.com/1100119dd42
-    - http://m.ip.bn765.com/11003940f0d
-    - http://m.ip.bn765.com/11009f3fca7
-    - http://m.ip.bn765.com/110001a3523
+    - images/makoto/11006645f8a.png
+    - images/makoto/1100119dd42.png
+    - images/makoto/11003940f0d.png
+    - images/makoto/11009f3fca7.png
+    - images/makoto/110001a3523.png
 - # 7
   name: 水瀬伊織
   yomi: みなせいおり
   id: iori
   type: vo
   images:
-    - http://m.ip.bn765.com/1100791a66e
-    - http://m.ip.bn765.com/1100cc320dd
-    - http://m.ip.bn765.com/110066dc81d
-    - http://m.ip.bn765.com/11004480fe7
-    - http://m.ip.bn765.com/1100a77d8e6
+    - images/iori/1100791a66e.png
+    - images/iori/1100cc320dd.png
+    - images/iori/110066dc81d.png
+    - images/iori/11004480fe7.png
+    - images/iori/1100a77d8e6.png
 - # 8:
   name: 四条貴音
   yomi: しじょうたかね
   id: takane
   type: vo
   images:
-    - http://m.ip.bn765.com/11005303050
-    - http://m.ip.bn765.com/110060c815c
-    - http://m.ip.bn765.com/11000ee3f17
-    - http://m.ip.bn765.com/110077a4b11
-    - http://m.ip.bn765.com/1100f5597cf
+    - images/takane/11005303050.png
+    - images/takane/110060c815c.png
+    - images/takane/11000ee3f17.png
+    - images/takane/110077a4b11.png
+    - images/takane/1100f5597cf.png
 - # 9
   name: 秋月律子
   yomi: あきづきりつこ
   id: ritsuko
   type: vi
   images:
-    - http://m.ip.bn765.com/11000ec2b3f
-    - http://m.ip.bn765.com/110083470a8
-    - http://m.ip.bn765.com/11009730588
-    - http://m.ip.bn765.com/1100f0c2a98
-    - http://m.ip.bn765.com/110064f1e0c
+    - images/ritsuko/11000ec2b3f.png
+    - images/ritsuko/110083470a8.png
+    - images/ritsuko/11009730588.png
+    - images/ritsuko/1100f0c2a98.png
+    - images/ritsuko/110064f1e0c.png
 - # 10
   name: 三浦あずさ
   yomi: みうらあずさ
   id: azusa
   type: vo
   images:
-    - http://m.ip.bn765.com/1100f896824
-    - http://m.ip.bn765.com/110067379b5
-    - http://m.ip.bn765.com/1100ef74704
-    - http://m.ip.bn765.com/1100e78c31c
-    - http://m.ip.bn765.com/1100e7c1876
+    - images/azusa/1100f896824.png
+    - images/azusa/110067379b5.png
+    - images/azusa/1100ef74704.png
+    - images/azusa/1100e78c31c.png
+    - images/azusa/1100e7c1876.png
 - # 11:
   name: 双海亜美
   yomi: ふたみあみ
   id: ami
   type: vi
   images:
-    - http://m.ip.bn765.com/1100c8dfeea
-    - http://m.ip.bn765.com/11008283f1e
-    - http://m.ip.bn765.com/11004ea80c8
-    - http://m.ip.bn765.com/1100e0914ee
-    - http://m.ip.bn765.com/110002f9a05
+    - images/ami/1100c8dfeea.png
+    - images/ami/11008283f1e.png
+    - images/ami/11004ea80c8.png
+    - images/ami/1100e0914ee.png
+    - images/ami/110002f9a05.png
 - # 12:
   name: 双海真美
   yomi: ふたみまみ
   id: mami
   type: vi
   images:
-    - http://m.ip.bn765.com/110051e235c
-    - http://m.ip.bn765.com/1100e3cab6d
-    - http://m.ip.bn765.com/1100332f311
-    - http://m.ip.bn765.com/1100db26874
-    - http://m.ip.bn765.com/1100fcb189e
+    - images/mami/110051e235c.png
+    - images/mami/1100e3cab6d.png
+    - images/mami/1100332f311.png
+    - images/mami/1100db26874.png
+    - images/mami/1100fcb189e.png
 - # 13:
   name: 我那覇響
   yomi: がなはひびき
   id: hibiki
   type: da
   images:
-    - http://m.ip.bn765.com/1100d0f175a
-    - http://m.ip.bn765.com/11009daf290
-    - http://m.ip.bn765.com/110064b436c
-    - http://m.ip.bn765.com/110028f6ec2
-    - http://m.ip.bn765.com/1100e0219e0
+    - images/hibiki/1100d0f175a.png
+    - images/hibiki/11009daf290.png
+    - images/hibiki/110064b436c.png
+    - images/hibiki/110028f6ec2.png
+    - images/hibiki/1100e0219e0.png
 - # 14:
   name: 春日未来
   yomi: かすがみらい
   id: mirai
   type: vo
   images:
-    - http://m.ip.bn765.com/110082b91c4
-    - http://m.ip.bn765.com/1100d24e5fe
-    - http://m.ip.bn765.com/110073dbc22
-    - http://m.ip.bn765.com/11009f0e052
-    - http://m.ip.bn765.com/1100fbc1d9a
+    - images/mirai/110082b91c4.png
+    - images/mirai/1100d24e5fe.png
+    - images/mirai/110073dbc22.png
+    - images/mirai/11009f0e052.png
+    - images/mirai/1100fbc1d9a.png
 - # 15:
   name: 最上静香
   yomi: もがみしずか
   id: shizuka
   type: vo
   images:
-    - http://m.ip.bn765.com/11006d506e0
-    - http://m.ip.bn765.com/1100fe2cd17
-    - http://m.ip.bn765.com/11000ed114f
-    - http://m.ip.bn765.com/1100f0e284f
-    - http://m.ip.bn765.com/11005076941
+    - images/shizuka/11006d506e0.png
+    - images/shizuka/1100fe2cd17.png
+    - images/shizuka/11000ed114f.png
+    - images/shizuka/1100f0e284f.png
+    - images/shizuka/11005076941.png
 - # 16:
   name: 伊吹翼
   yomi: いぶきつばさ
   id: tsubasa
   type: vi
   images:
-    - http://m.ip.bn765.com/1100b8c412e
-    - http://m.ip.bn765.com/11001bbfb67
-    - http://m.ip.bn765.com/11009204048
-    - http://m.ip.bn765.com/1100560030c
-    - http://m.ip.bn765.com/1100efff438
+    - images/tsubasa/1100b8c412e.png
+    - images/tsubasa/11001bbfb67.png
+    - images/tsubasa/11009204048.png
+    - images/tsubasa/1100560030c.png
+    - images/tsubasa/1100efff438.png
 - # 17:
   name: 田中琴葉
   yomi: たなかことは
   id: kotoha
   type: vo
   images:
-    - http://m.ip.bn765.com/1100aefcf25
-    - http://m.ip.bn765.com/11000ed5f38
-    - http://m.ip.bn765.com/11005ffd19d
-    - http://m.ip.bn765.com/1100f374c0e
-    - http://m.ip.bn765.com/1100b64c71f
+    - images/kotoha/1100aefcf25.png
+    - images/kotoha/11000ed5f38.png
+    - images/kotoha/11005ffd19d.png
+    - images/kotoha/1100f374c0e.png
+    - images/kotoha/1100b64c71f.png
 - # 18:
   name: 島原エレナ
   yomi: しまばらえれな
   id: elena
   type: da
   images:
-    - http://m.ip.bn765.com/1100599878b
-    - http://m.ip.bn765.com/11004eced7b
-    - http://m.ip.bn765.com/1100d030dd9
-    - http://m.ip.bn765.com/1100a7f6ca6
-    - http://m.ip.bn765.com/1100b503206
+    - images/elena/1100599878b.png
+    - images/elena/11004eced7b.png
+    - images/elena/1100d030dd9.png
+    - images/elena/1100a7f6ca6.png
+    - images/elena/1100b503206.png
 - # 19:
   name: 佐竹美奈子
   yomi: さたけみなこ
   id: minako
   type: da
   images:
-    - http://m.ip.bn765.com/1100c8bcbd9
-    - http://m.ip.bn765.com/11004da7ae1
-    - http://m.ip.bn765.com/110016ffd88
-    - http://m.ip.bn765.com/11001f0efaf
-    - http://m.ip.bn765.com/11000418167
+    - images/minako/1100c8bcbd9.png
+    - images/minako/11004da7ae1.png
+    - images/minako/110016ffd88.png
+    - images/minako/11001f0efaf.png
+    - images/minako/11000418167.png
 - # 20:
   name: 所恵美
   yomi: ところめぐみ
   id: megumi
   type: vi
   images:
-    - http://m.ip.bn765.com/11004606e86
-    - http://m.ip.bn765.com/11001f3a473
-    - http://m.ip.bn765.com/110094c901c
-    - http://m.ip.bn765.com/11008865487
-    - http://m.ip.bn765.com/1100134e4e0
+    - images/megumi/11004606e86.png
+    - images/megumi/11001f3a473.png
+    - images/megumi/110094c901c.png
+    - images/megumi/11008865487.png
+    - images/megumi/1100134e4e0.png
 - # 21:
   name: 徳川まつり
   yomi: とくがわまつり
   id: matsuri
   type: vi
   images:
-    - http://m.ip.bn765.com/1100f8d7796
-    - http://m.ip.bn765.com/11000ff48ea
-    - http://m.ip.bn765.com/1100dea1473
-    - http://m.ip.bn765.com/1100a85b3d3
-    - http://m.ip.bn765.com/1100c245f17
+    - images/matsuri/1100f8d7796.png
+    - images/matsuri/11000ff48ea.png
+    - images/matsuri/1100dea1473.png
+    - images/matsuri/1100a85b3d3.png
+    - images/matsuri/1100c245f17.png
 - # 22:
   name: 箱崎星梨花
   yomi: はこざきせりか
   id: serika
   type: vo
   images:
-    - http://m.ip.bn765.com/1100b2e9fa1
-    - http://m.ip.bn765.com/1100d8f876c
-    - http://m.ip.bn765.com/110097526d8
-    - http://m.ip.bn765.com/110004aed69
-    - http://m.ip.bn765.com/110004a09bd
+    - images/serika/1100b2e9fa1.png
+    - images/serika/1100d8f876c.png
+    - images/serika/110097526d8.png
+    - images/serika/110004aed69.png
+    - images/serika/110004a09bd.png
 - # 23:
   name: 野々原茜
   yomi: ののはらあかね
   id: akane
   type: da
   images:
-    - http://m.ip.bn765.com/11009b9e015
-    - http://m.ip.bn765.com/11006d57a0a
-    - http://m.ip.bn765.com/11000f11d30
-    - http://m.ip.bn765.com/1100633ffc1
-    - http://m.ip.bn765.com/1100d08e158
+    - images/akane/11009b9e015.png
+    - images/akane/11006d57a0a.png
+    - images/akane/11000f11d30.png
+    - images/akane/1100633ffc1.png
+    - images/akane/1100d08e158.png
 - # 24:
   name: 望月杏奈
   yomi: もちづきあんな
   id: anna
   type: vo
   images:
-    - http://m.ip.bn765.com/1100e57337f
-    - http://m.ip.bn765.com/11008098006
-    - http://m.ip.bn765.com/1100774c550
-    - http://m.ip.bn765.com/11006145b91
-    - http://m.ip.bn765.com/11000e606ee
+    - images/anna/1100e57337f.png
+    - images/anna/11008098006.png
+    - images/anna/1100774c550.png
+    - images/anna/11006145b91.png
+    - images/anna/11000e606ee.png
 - # 25:
   name: ロコ
   yomi: はんだろこ 伴田路子
   id: loco
   type: vi
   images:
-    - http://m.ip.bn765.com/1100ec5aa03
-    - http://m.ip.bn765.com/1100f073743
-    - http://m.ip.bn765.com/1100bc37a30
-    - http://m.ip.bn765.com/110026c12d7
-    - http://m.ip.bn765.com/11007fd7edb
+    - images/loco/1100ec5aa03.png
+    - images/loco/1100f073743.png
+    - images/loco/1100bc37a30.png
+    - images/loco/110026c12d7.png
+    - images/loco/11007fd7edb.png
 - # 26:
   name: 七尾百合子
   yomi: ななおゆりこ
   id: yuriko
   type: vi
   images:
-    - http://m.ip.bn765.com/1100181f523
-    - http://m.ip.bn765.com/1100cb0cacd
-    - http://m.ip.bn765.com/1100de90196
-    - http://m.ip.bn765.com/11000015307
-    - http://m.ip.bn765.com/110029826e9
+    - images/yuriko/1100181f523.png
+    - images/yuriko/1100cb0cacd.png
+    - images/yuriko/1100de90196.png
+    - images/yuriko/11000015307.png
+    - images/yuriko/110029826e9.png
 - # 27:
   name: 高山紗代子
   yomi: たかやまさよこ
   id: sayoko
   type: vo
   images:
-    - http://m.ip.bn765.com/1100fb58a8c
-    - http://m.ip.bn765.com/11008cf4c60
-    - http://m.ip.bn765.com/1100d54e841
-    - http://m.ip.bn765.com/1100e49df0a
-    - http://m.ip.bn765.com/1100ea94606
+    - images/sayoko/1100fb58a8c.png
+    - images/sayoko/11008cf4c60.png
+    - images/sayoko/1100d54e841.png
+    - images/sayoko/1100e49df0a.png
+    - images/sayoko/1100ea94606.png
 - # 28:
   name: 松田亜利沙
   yomi: まつだありさ
   id: arisa
   type: vo
   images:
-    - http://m.ip.bn765.com/1100520eec7
-    - http://m.ip.bn765.com/1100256bbec
-    - http://m.ip.bn765.com/11009b6f1bd
-    - http://m.ip.bn765.com/110068af21b
-    - http://m.ip.bn765.com/11009c7e4b5
+    - images/arisa/1100520eec7.png
+    - images/arisa/1100256bbec.png
+    - images/arisa/11009b6f1bd.png
+    - images/arisa/110068af21b.png
+    - images/arisa/11009c7e4b5.png
 - # 29:
   name: 高坂海美
   yomi: こうさかうみ
   id: umi
   type: da
   images:
-    - http://m.ip.bn765.com/1100873ffe2
-    - http://m.ip.bn765.com/11009c6eccf
-    - http://m.ip.bn765.com/11005408e26
-    - http://m.ip.bn765.com/1100b8efeb9
-    - http://m.ip.bn765.com/1100661c1fb
+    - images/umi/1100873ffe2.png
+    - images/umi/11009c6eccf.png
+    - images/umi/11005408e26.png
+    - images/umi/1100b8efeb9.png
+    - images/umi/1100661c1fb.png
 - # 30:
   name: 中谷育
   yomi: なかたにいく
   id: iku
   type: vi
   images:
-    - http://m.ip.bn765.com/110046e3e10
-    - http://m.ip.bn765.com/1100bf30438
-    - http://m.ip.bn765.com/1100cf2b566
-    - http://m.ip.bn765.com/1100d2fa3d5
-    - http://m.ip.bn765.com/1100f5ac68a
+    - images/iku/110046e3e10.png
+    - images/iku/1100bf30438.png
+    - images/iku/1100cf2b566.png
+    - images/iku/1100d2fa3d5.png
+    - images/iku/1100f5ac68a.png
 - # 31:
   name: 天空橋朋花
   yomi: てんくうばしともか
   id: tomoka
   type: vo
   images:
-    - http://m.ip.bn765.com/11002d8753b
-    - http://m.ip.bn765.com/110019544b8
-    - http://m.ip.bn765.com/11000b097ac
-    - http://m.ip.bn765.com/1100075773d
-    - http://m.ip.bn765.com/1100e25249c
+    - images/tomoka/11002d8753b.png
+    - images/tomoka/110019544b8.png
+    - images/tomoka/11000b097ac.png
+    - images/tomoka/1100075773d.png
+    - images/tomoka/1100e25249c.png
 - # 32:
   name: エミリー
   yomi: えみりーすちゅあーと
   id: emily
   type: da
   images:
-    - http://m.ip.bn765.com/1100e4622b9
-    - http://m.ip.bn765.com/1100bac220a
-    - http://m.ip.bn765.com/1100fb8cd58
-    - http://m.ip.bn765.com/110080b3243
-    - http://m.ip.bn765.com/110045958f1
+    - images/emily/1100e4622b9.png
+    - images/emily/1100bac220a.png
+    - images/emily/1100fb8cd58.png
+    - images/emily/110080b3243.png
+    - images/emily/110045958f1.png
 - # 33:
   name: 北沢志保
   yomi: きたざわしほ
   id: shiho
   type: vi
   images:
-    - http://m.ip.bn765.com/110010cee12
-    - http://m.ip.bn765.com/110098a7869
-    - http://m.ip.bn765.com/110029b0b21
-    - http://m.ip.bn765.com/1100729a670
-    - http://m.ip.bn765.com/1100d1588a1
+    - images/shiho/110010cee12.png
+    - images/shiho/110098a7869.png
+    - images/shiho/110029b0b21.png
+    - images/shiho/1100729a670.png
+    - images/shiho/1100d1588a1.png
 - # 34:
   name: 舞浜歩
   yomi: まいはまあゆむ
   id: ayumu
   type: da
   images:
-    - http://m.ip.bn765.com/110024270b5
-    - http://m.ip.bn765.com/110041a63aa
-    - http://m.ip.bn765.com/1100dc77630
-    - http://m.ip.bn765.com/1100103a572
-    - http://m.ip.bn765.com/1100846d806
+    - images/ayumu/110024270b5.png
+    - images/ayumu/110041a63aa.png
+    - images/ayumu/1100dc77630.png
+    - images/ayumu/1100103a572.png
+    - images/ayumu/1100846d806.png
 - # 35:
   name: 木下ひなた
   yomi: きのしたひなた
   id: hinata
   type: vo
   images:
-    - http://m.ip.bn765.com/1100673f00f
-    - http://m.ip.bn765.com/1100663c842
-    - http://m.ip.bn765.com/1100ccbe2b5
-    - http://m.ip.bn765.com/110045cea3f
-    - http://m.ip.bn765.com/1100fde9f45
+    - images/hinata/1100673f00f.png
+    - images/hinata/1100663c842.png
+    - images/hinata/1100ccbe2b5.png
+    - images/hinata/110045cea3f.png
+    - images/hinata/1100fde9f45.png
 - # 36:
   name: 矢吹可奈
   yomi: やぶきかな
   id: kana
   type: vo
   images:
-    - http://m.ip.bn765.com/110074f19e8
-    - http://m.ip.bn765.com/1100e73a2d3
-    - http://m.ip.bn765.com/1100cea8282
-    - http://m.ip.bn765.com/11007a93718
-    - http://m.ip.bn765.com/11003d91f85
+    - images/kana/110074f19e8.png
+    - images/kana/1100e73a2d3.png
+    - images/kana/1100cea8282.png
+    - images/kana/11007a93718.png
+    - images/kana/11003d91f85.png
 - # 37:
   name: 横山奈緒
   yomi: よこやまなお
   id: nao
   type: da
   images:
-    - http://m.ip.bn765.com/1100061330f
-    - http://m.ip.bn765.com/110032c8059
-    - http://m.ip.bn765.com/1100289066c
-    - http://m.ip.bn765.com/11004f6d6f9
-    - http://m.ip.bn765.com/1100b6e68b3
+    - images/nao/1100061330f.png
+    - images/nao/110032c8059.png
+    - images/nao/1100289066c.png
+    - images/nao/11004f6d6f9.png
+    - images/nao/1100b6e68b3.png
 - # 38:
   name: 二階堂千鶴
   yomi: にかいどうちづる
   id: chizuru
   type: vi
   images:
-    - http://m.ip.bn765.com/11001bee1c4
-    - http://m.ip.bn765.com/11006e58cce
-    - http://m.ip.bn765.com/1100dd022c6
-    - http://m.ip.bn765.com/110004888ff
-    - http://m.ip.bn765.com/1100355c5e6
-    - http://m.ip.bn765.com/11007e5ff07
-    - http://m.ip.bn765.com/1100a7e8e0f
-    - http://m.ip.bn765.com/1100a884bd1
+    - images/chizuru/11001bee1c4.png
+    - images/chizuru/11006e58cce.png
+    - images/chizuru/1100dd022c6.png
+    - images/chizuru/110004888ff.png
+    - images/chizuru/1100355c5e6.png
+    - images/chizuru/11007e5ff07.png
+    - images/chizuru/1100a7e8e0f.png
+    - images/chizuru/1100a884bd1.png
 - # 39:
   name: 馬場このみ
   yomi: ばばこのみ
   id: konomi
   type: da
   images:
-    - http://m.ip.bn765.com/1100ee1bf8a
-    - http://m.ip.bn765.com/1100454467f
-    - http://m.ip.bn765.com/110096357ec
-    - http://m.ip.bn765.com/1100bdc5ca0
-    - http://m.ip.bn765.com/11000cc8c1d
+    - images/konomi/1100ee1bf8a.png
+    - images/konomi/1100454467f.png
+    - images/konomi/110096357ec.png
+    - images/konomi/1100bdc5ca0.png
+    - images/konomi/11000cc8c1d.png
 - # 40:
   name: 大神環
   yomi: おおがみたまき
   id: tamaki
   type: da
   images:
-    - http://m.ip.bn765.com/110037cf285
-    - http://m.ip.bn765.com/11004239985
-    - http://m.ip.bn765.com/1100cd781b9
-    - http://m.ip.bn765.com/11009306442
-    - http://m.ip.bn765.com/1100e48176d
+    - images/tamaki/110037cf285.png
+    - images/tamaki/11004239985.png
+    - images/tamaki/1100cd781b9.png
+    - images/tamaki/11009306442.png
+    - images/tamaki/1100e48176d.png
 - # 41:
   name: 豊川風花
   yomi: とよかわふうか
   id: fuuka
   type: vi
   images:
-    - http://m.ip.bn765.com/1100751673a
-    - http://m.ip.bn765.com/1100cab1d6f
-    - http://m.ip.bn765.com/1100568cf5d
-    - http://m.ip.bn765.com/1100ced34f3
-    - http://m.ip.bn765.com/110004d91c4
+    - images/fuuka/1100751673a.png
+    - images/fuuka/1100cab1d6f.png
+    - images/fuuka/1100568cf5d.png
+    - images/fuuka/1100ced34f3.png
+    - images/fuuka/110004d91c4.png
 - # 42:
   name: 宮尾美也
   yomi: みやおみや
   id: miya
   type: vi
   images:
-    - http://m.ip.bn765.com/1100e528ab1
-    - http://m.ip.bn765.com/110063ac962
-    - http://m.ip.bn765.com/11009235b28
-    - http://m.ip.bn765.com/1100ccaab70
-    - http://m.ip.bn765.com/1100c1f662c
+    - images/miya/1100e528ab1.png
+    - images/miya/110063ac962.png
+    - images/miya/11009235b28.png
+    - images/miya/1100ccaab70.png
+    - images/miya/1100c1f662c.png
 - # 43:
   name: 福田のり子
   yomi: ふくだのりこ
   id: noriko
   type: da
   images:
-    - http://m.ip.bn765.com/110094935a5
-    - http://m.ip.bn765.com/1100f39bb2e
-    - http://m.ip.bn765.com/1100b5be2b4
-    - http://m.ip.bn765.com/1100acb7be6
-    - http://m.ip.bn765.com/11009f9b6b2
+    - images/noriko/110094935a5.png
+    - images/noriko/1100f39bb2e.png
+    - images/noriko/1100b5be2b4.png
+    - images/noriko/1100acb7be6.png
+    - images/noriko/11009f9b6b2.png
 - # 44:
   name: 真壁瑞希
   yomi: まかべみづき
   id: mizuki
   type: da
   images:
-    - http://m.ip.bn765.com/11009c71579
-    - http://m.ip.bn765.com/1100a16190e
-    - http://m.ip.bn765.com/11002fbefa1
-    - http://m.ip.bn765.com/11009898f2c
-    - http://m.ip.bn765.com/110085e891f
+    - images/mizuki/11009c71579.png
+    - images/mizuki/1100a16190e.png
+    - images/mizuki/11002fbefa1.png
+    - images/mizuki/11009898f2c.png
+    - images/mizuki/110085e891f.png
 - # 45:
   name: 篠宮可憐
   yomi: しのみやかれん
   id: karen
   type: vi
   images:
-    - http://m.ip.bn765.com/1100d0b1ec4
-    - http://m.ip.bn765.com/11001a655a3
-    - http://m.ip.bn765.com/1100afc3f4e
-    - http://m.ip.bn765.com/1100309480b
-    - http://m.ip.bn765.com/110007d2bd1
+    - images/karen/1100d0b1ec4.png
+    - images/karen/11001a655a3.png
+    - images/karen/1100afc3f4e.png
+    - images/karen/1100309480b.png
+    - images/karen/110007d2bd1.png
 - # 46:
   name: 百瀬莉緒
   yomi: ももせりお
   id: rio
   type: da
   images:
-    - http://m.ip.bn765.com/11003f39582
-    - http://m.ip.bn765.com/110037452c0
-    - http://m.ip.bn765.com/11006b6eb86
-    - http://m.ip.bn765.com/1100b03e2b2
-    - http://m.ip.bn765.com/11000b1d37c
+    - images/rio/11003f39582.png
+    - images/rio/110037452c0.png
+    - images/rio/11006b6eb86.png
+    - images/rio/1100b03e2b2.png
+    - images/rio/11000b1d37c.png
 - # 47:
   name: 永吉昴
   yomi: ながよしすばる
   id: subaru
   type: da
   images:
-    - http://m.ip.bn765.com/11009f8d574
-    - http://m.ip.bn765.com/1100edabd4b
-    - http://m.ip.bn765.com/11002e788b3
-    - http://m.ip.bn765.com/11005cd5f8d
-    - http://m.ip.bn765.com/11003df281b
+    - images/subaru/11009f8d574.png
+    - images/subaru/1100edabd4b.png
+    - images/subaru/11002e788b3.png
+    - images/subaru/11005cd5f8d.png
+    - images/subaru/11003df281b.png
 - # 48:
   name: 北上麗花
   yomi: きたかみれいか
   id: reika
   type: da
   images:
-    - http://m.ip.bn765.com/11004ff1d2f
-    - http://m.ip.bn765.com/1100d532d7c
-    - http://m.ip.bn765.com/11008cd5c16
-    - http://m.ip.bn765.com/1100cefe9cc
-    - http://m.ip.bn765.com/110004a764a
+    - images/reika/11004ff1d2f.png
+    - images/reika/1100d532d7c.png
+    - images/reika/11008cd5c16.png
+    - images/reika/1100cefe9cc.png
+    - images/reika/110004a764a.png
 - # 49:
   name: 周防桃子
   yomi: すおうももこ
   id: momoko
   type: vi
   images:
-    - http://m.ip.bn765.com/1100dc02a42
-    - http://m.ip.bn765.com/1100e8c1f4c
-    - http://m.ip.bn765.com/1100d7d19f6
-    - http://m.ip.bn765.com/11001bca217
-    - http://m.ip.bn765.com/11009e1752b
+    - images/momoko/1100dc02a42.png
+    - images/momoko/1100e8c1f4c.png
+    - images/momoko/1100d7d19f6.png
+    - images/momoko/11001bca217.png
+    - images/momoko/11009e1752b.png
 - # 50:
   name: ジュリア
   yomi: じゅりあ
   id: julia
   type: vo
   images:
-    - http://m.ip.bn765.com/11002430981
-    - http://m.ip.bn765.com/11007660575
-    - http://m.ip.bn765.com/110094c2a09
-    - http://m.ip.bn765.com/11002655d0c
-    - http://m.ip.bn765.com/110054911c7
+    - images/julia/11002430981.png
+    - images/julia/11007660575.png
+    - images/julia/110094c2a09.png
+    - images/julia/11002655d0c.png
+    - images/julia/110054911c7.png
 -
   name: 音無小鳥
   yomi: おとなしことり
   id: kotori
   type: ex
   images:
-    - http://m.ip.bn765.com/1100234b19f
-    - http://m.ip.bn765.com/110037cd7ff
-    - http://m.ip.bn765.com/11005d6ddd5
-    - http://m.ip.bn765.com/11003921ba6
-    - http://m.ip.bn765.com/11002e83eff
-    - http://m.ip.bn765.com/11002769596
-    - http://m.ip.bn765.com/11002cc667c
-    - http://m.ip.bn765.com/11004ec8097
+    - images/kotori/1100234b19f.png
+    - images/kotori/110037cd7ff.png
+    - images/kotori/11005d6ddd5.png
+    - images/kotori/11003921ba6.png
+    - images/kotori/11002e83eff.png
+    - images/kotori/11002769596.png
+    - images/kotori/11002cc667c.png
+    - images/kotori/11004ec8097.png
 -
   name: カメラマン
   yomi: かめらまん
