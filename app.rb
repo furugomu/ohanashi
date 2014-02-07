@@ -54,7 +54,7 @@ class ImageGenerator
     @unit_height = 168
     @images = []
 
-    waku_path = 'http://m.ip.bn765.com/21006e59e67'
+    waku_path = 'http://m.ip.bn765.com/11006e59e67'
     @waku = open(waku_path) {|f| Magick::Image.from_blob(f.read())[0] }
   end
 
@@ -62,7 +62,7 @@ class ImageGenerator
     canvas = Magick::Image.new(@width, @unit_height * @images.size)
 
     # 背景だ
-    bg_path = 'http://m.ip.bn765.com/21002c9b1d8'
+    bg_path = 'http://m.ip.bn765.com/11002c9b1d8'
     bg = open(bg_path) {|f| Magick::Image.from_blob(f.read())[0] }
     canvas.composite_tiled!(bg)
 
