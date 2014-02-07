@@ -1,1 +1,1 @@
-web: bundle exec thin start --rackup config.ru -p $PORT --threaded
+web: bundle exec puma --port $PORT
