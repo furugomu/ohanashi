@@ -1,0 +1,28 @@
+{
+  "name": "ohanashi",
+  "private": true,
+  "version": "1.5.0",
+  "description": "おはなしジェネレーター for アイドルマスターミリオンライブ！",
+  "scripts": {
+    "start": "browser-sync start --server --files '*.html, *.css, *.js'",
+    "build": "jspm bundle ohanashi --minify"
+  },
+  "author": "furugomu@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.7.5",
+    "jspm": "^0.15.6"
+  },
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "fetch": "github:github/fetch@^0.8.2",
+      "vue": "npm:vue@^0.12.0-beta4"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}

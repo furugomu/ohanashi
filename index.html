@@ -1,0 +1,138 @@
+<!DOCTYPE html><!--*- encoding: UTF-8 -*-->
+<html lang=ja ng-app="ohanashi">
+ <head>
+  <meta charset=UTF-8>
+  <title>おはなしジェネレーター for アイドルマスターミリオンライブ！</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <link rel=stylesheet href=ohanashi.css>
+ </head>
+ <body>
+  <header class="jumbotron">
+   <h1>おはなしジェネレーター</h1>
+   <p>アイドルマスターミリオンライブ！ のおはなしを作ろう！</p>
+   <p class=small>
+    別の方が作った <a href="http://oahiroaki.github.io/ohanashi-gen-dere/">for アイドルマスターシンデレラガールズ</a>もあります。
+   </p>
+  </header>
+
+  <main class="container">
+   <section id="select-idol">
+    <h2>アイドルを選ぶ</h2>
+
+    <div class="form-inline">
+    <span>
+     <label><input name=type type=radio v-model="search.type" value="">All</label>
+     <label><input name=type type=radio v-model="search.type" value="vo">Vo</label>
+     <label><input name=type type=radio v-model="search.type" value="da">Da</label>
+     <label><input name=type type=radio v-model="search.type" value="vi">Vi</label>
+     <label><input name=type type=radio v-model="search.type" value="ex">Ex</label>
+    </span>
+    <label>
+     <input type=search size=20 v-model="searchText" placeholder="にかいどう" class="form-control">
+    </label>
+    </div>
+
+    <ul class="nav nav-pills">
+     <li v-repeat="idol: idols | search"
+      v-on="click: select(idol)"
+      v-class="active: selected.idol === idol">
+      <a>
+       <img class="face icon select" v-attr="src: idol.images[0]">
+      </a>
+     </li>
+    </ul>
+
+    <h2>表情を選ぶ</h2>
+
+    <div class="tab-content" v-if="selected.idol">
+     <div class="tab-pane active">
+      <span v-repeat="selected.idol.images">
+       <img v-attr="src: $value" alt="" v-on="click: selectImage($index)" class="face select">
+      </span>
+     </div>
+    </div>
+   </section>
+
+   <!-- せりふをつくる -->
+   <section id="preview">
+    <h2>せりふを考える</h2>
+    <form v-on="submit: addParagraph">
+     <div class="scenario" v-if="selected.idol">
+      <div class="paragraph">
+       <img v-attr="src: selected.idol.images[selected.imageIndex]" class=face>
+       <div class="fukidashi">
+        <p class="name">{{selected.idol.name}}</p>
+        <pre class="serifu">{{selected.text}}</pre>
+       </div>
+      </div>
+     </div>
+     <p><textarea v-model="selected.text" rows=2 cols=60></textarea></p>
+     <p><button class="btn btn-default">↓追加↓</button></p>
+    </form>
+   </section>
+
+   <section>
+    <h2>プレビュー</h2>
+    <p><label><input type=checkbox v-model="editting">編集モード</label></p>
+    <p v-show="paragraphs.length == 0" class="alert alert-warning">
+     スマートフォン等、環境によっては画像を保存できないことがあります。
+     長いおはなしを作る前に短いので試してください。
+    </p>
+    <form action="/image" method="post">
+     <div class="scenario">
+      <div v-repeat="paragraphs">
+       <div class="paragraph">
+        <img v-attr="src: idol.images[imageIndex]" class=face>
+        <div class="fukidashi">
+         <p class="name">{{idol.name}}</p>
+         <pre class="serifu">{{text}}</pre>
+        </div>
+        <input type=hidden name=ids[] value="{{idol.id}}">
+        <input type=hidden name=images[] value="{{imageIndex}}">
+        <input type=hidden name=texts[] value="{{text}}">
+       </div>
+       <div v-if="editting">
+        <button class=btn type=button v-attr="disabled: $index === 0"
+         v-on="click: moveup($index)">↑</button>
+        <button class=btn type=button v-attr="disabled: $index + 1 === paragraphs.length"
+         v-on="click: movedown($index)">↓</button>
+        <button class="btn btn-danger" type=button
+         v-on="click: paragraphs.splice($index, 1)">削除</button>
+       </div>
+      </div>
+     </div>
+     <p>
+      <button type=submit class="btn btn-primary"
+       v-attr="disabled: paragraphs.length == 0">画像を保存する</button>
+     </p>
+     <p>
+      画像内の文字は<a href="http://ipafont.ipa.go.jp/">IPAフォント</a>
+      を利用しています。
+     </p>
+    </form>
+   </section>
+
+   <footer>
+    <p>
+     お問い合わせは
+     <a href="https://twitter.com/furugomu">@furugomu</a>
+     へ。
+    </p>
+
+    <p>
+     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">Tweet</a>
+     <a href="https://github.com/furugomu/ohanashi">Fork me on GitHub!!!!!!!!!!!!</a>
+    </p>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+   </footer>
+  </main>
+
+  <script src=jspm_packages/system.js></script>
+  <script src=build.js></script>
+  <script src=config.js></script>
+  <script>System.import('ohanashi')</script>
+ </body>
+</html>

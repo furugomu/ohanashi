@@ -1,19 +1,17 @@
 おはなしジェネレーター
 ======================
 
-## 動かし方(ローカル)
+## 動かし方
 
-1. ruby や libmagick などをインストールする
-2. bundle
-3. gem install shotgun
-4. shotgun
+browser-sync とか python -m SimpeHTTPServer とかする。
 
-localhost:9393 で見える。
+## 開発
 
-## 動かし方(heroku)
+* build.js を消す
+* npm i
+* npm i -g jspm; jspm registry config github
+* jspm i
+* npm start
+* いじり終わったら npm run build してコミット
 
-1. Heroku Toolbelt をインストールする
-2. 
- - 新規: heroku create <var>appname</var>
- - 既存: heroku git:remote --app <var>appname</var>
-3. git push heroku master
+build.js の扱いをどうにかしたい。
