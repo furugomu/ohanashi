@@ -4,48 +4,76 @@ import 'babel/polyfill';
 import Vue from 'vue';
 import 'fetch';
 
-let app = window.app = new Vue({
-  el: 'main',
+// 店
+let store = window.store = new Vue({
   data: {
-    idols: [],
-    search: {type: ''},
-    searchText: '',
-    selected: {idol: null, imageIndex: 0, text: ''},
-    paragraphs: [],
+    paragraphs: [/* {idol, image, text} */],
+  },
+  methods: {
+    // アイドル一覧をとってくる
+    fetchIdols() {
+      fetch('./millionstars.json')
+      .then((response) => response.json())
+      .then((idols) => {
+        this.idols = idols;
+        this.$emit('idols-updated', idols);
+      })
+      .catch((err) => alert('遺憾の意'));
+    },
+    // アイドルを選ぶ
+    selectIdol(idolOrId) {
+      let id = idolOrId.id ? idolOrId.id : idolOrId;
+      let idol = (this.idols || []).find((idol) => idol.id === id);
+      this.$emit('idol-selected', idol);
+    },
+    // 絵の URL を選ぶ
+    selectImage(url) {
+      this.$emit('image-selected', url);
+    },
+    // 追加する
+    addParagraph(idol, image, text) {
+      this.paragraphs.push({idol, image, text});
+      this.$emit('paragraphs-updated', this.paragraphs);
+    },
+    // 入れ替える
+    swapParagraphs(i, j) {
+      let t = this.paragraphs[i];
+      this.paragraphs[i] = this.paragraphs[j];
+      this.paragraphs[j] = t;
+      this.$emit('paragraphs-updated', this.paragraphs);
+    },
+    // 取り除く
+    removeParagraph(i) {
+      this.paragraphs.splice(i, 1);
+      this.$emit('paragraphs-updated', this.paragraphs);
+    },
+  },
+});
+
+// アイドルを選ぶ
+Vue.component('og-idols', {
+  template: '#idols-template',
+  data() {
+    return {
+      idols: [],
+      search: {type: ''},
+      searchText: '',
+      selectedIdol: null,
+    };
+  },
+  created() {
+    store.$addChild(this);
+    store.$on('idols-updated', (idols) => {
+      this.idols = idols;
+    });
+    store.$on('idol-selected', (idol) => {
+      this.selectedIdol = idol;
+    });
   },
   methods: {
     select(idol) {
-      this.selected.idol = idol;
-      if (this.selected.imageIndex >= idol.images.length) {
-        this.selected.imageIndex = 0;
-      }
-      if (!this.selected.text && idol.default_text) {
-        this.selected.text = idol.default_text;
-      }
+      store.selectIdol(idol);
     },
-    selectImage(index) {
-      this.selected.imageIndex = index;
-    },
-    addParagraph(event) {
-      event.preventDefault();
-      this.paragraphs.push(JSON.parse(JSON.stringify(this.selected)));
-      this.selected.text = '';
-    },
-    moveup(i) {
-      swap(this.paragraphs, i, i-1);
-    },
-    movedown(i) {
-      swap(this.paragraphs, i, i+1);
-    },
-  },
-  ready() {
-    fetch('./millionstars.json')
-    .then((response) => response.json())
-    .then((idols) => {
-      this.idols = idols;
-      this.selected.idol = idols[37];
-    })
-    .catch((err) => console.error(err));
   },
   filters: {
     search(idols) {
@@ -58,52 +86,99 @@ let app = window.app = new Vue({
   },
 });
 
-function swap(array, i, j) {
-  let t = array[i];
-  array[i] = array[j];
-  array[j] = t;
-}
-
-/*
-var app = angular.module("ohanashi", []);
-app.controller('Ctrl', function($scope, $http) {
-  $scope.search = {type: ""};
-  $scope.selected = {};
-  $scope.paragraphs = [];
-
-  $http.get('millionstars.json').success(function(idols) {
-    $scope.idols = idols;
-
-    $scope.selected.idol = idols[37];
-    $scope.selected.imageIndex = 0;
-  });
-
-  $scope.select = function(idol) {
-    $scope.selected.idol = idol;
-    if ($scope.selected.imageIndex >= idol.images.length)
-      $scope.selected.imageIndex = 0;
-    if (!$scope.selected.text && idol.default_text)
-      $scope.selected.text = idol.default_text;
-  }
-
-  $scope.addParagraph = function() {
-    $scope.paragraphs.push(angular.copy($scope.selected));
-    $scope.selected.text = '';
-  }
-
-  var swap = function(array, i, j) {
-    var t = array[i];
-    array[i] = array[j];
-    array[j] = t;
-  }
-
-  $scope.moveup = function(array, i) {
-    swap(array, i, i-1);
-  }
-
-  $scope.movedown = function(array, i) {
-    swap(array, i, i+1);
-  }
-
+// 絵を選ぶ
+Vue.component('og-faces', {
+  template: '#faces-template',
+  data() {
+    return { idol: null };
+  },
+  created() {
+    store.$on('idol-selected', (idol) => {
+      this.idol = idol;
+      this.select(idol.images[0]);
+    });
+  },
+  methods: {
+    select(url) {
+      store.selectImage(url);
+    },
+  },
 });
-*/
+
+// 文字を書く
+Vue.component('og-form', {
+  template: '#form-template',
+  data() {
+    return { idol: null, image: null, text: '' };
+  },
+  created() {
+    store.$on('idol-selected', (idol) => {
+      this.idol = idol;
+      if (!this.text) { this.text = idol['default_text']; }
+    });
+    store.$on('image-selected', (url) => this.image = url);
+  },
+  computed: {
+    isReady() {
+      return this.idol !== null && this.image !== null;
+    }
+  },
+  methods: {
+    addParagraph(event) {
+      event.preventDefault();
+      store.addParagraph(this.idol, this.image, this.text);
+      this.text = '';
+    },
+  },
+  components: {
+    unko: {
+      paramAttributes: ['idol', 'image', 'text'],
+      template: '<p>unko: {{idol}}, {{image}}, {{text}}</p>',
+    }
+  },
+});
+
+// 並べる
+Vue.component('og-list', {
+  template: '#list-template',
+  data() {
+    return { paragraphs: [], };
+  },
+  created() {
+    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
+  },
+  computed: {
+    showAlert() {
+      this.paragraphs.length === 0;
+    },
+  },
+  methods: {
+    moveup(i) {
+      store.swapParagraphs(i, i - 1);
+    },
+    movedown(i) {
+      store.swapParagraphs(i, i + 1);
+    },
+    remove(i) {
+      store.removeParagraph(i);
+    }
+  }
+});
+
+let app = window.app = new Vue({
+  name: 'app',
+  el: 'main',
+  data: {
+  },
+  methods: {
+  },
+  created() {
+    store.$on('idols-updated', (idols) => {
+      store.selectIdol(idols.find((idol) => idol.id === 'chizuru'));
+    });
+    store.fetchIdols();
+  },
+});
+
+
+function clone(x) { return Object.assign({}, x); }
