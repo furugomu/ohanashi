@@ -22,6 +22,8 @@
    <og-faces v-ref="faces"></og-faces>
    <og-form v-ref="form"></og-form>
    <og-list v-ref="list"></og-list>
+   <h2>できあがり</h2>
+   <og-canvas v-ref="canvas"></og-canvas>
 
    <section>
      <p>
@@ -131,6 +133,15 @@
         <pre class="serifu">{{text}}</pre>
        </div>
       </div>
+  </template>
+
+  <template id=svg-template>
+   <svg width="320" height="{{height}}" style="background: url(images/11002c9b1d8.png) repeat-y">
+    <g v-repeat="paragraphs" transform="translate(0, {{$index}} * unitHeight)">
+     <image x=4 y=4 width=76 height=76 xlink:href="{{image}}"></image>
+     <image x=87 y=4 width=224 height=76 xlink:href="{{wakuUrl}}"></image>
+    </g>
+   </svg>
   </template>
 
   <script src=jspm_packages/system.js></script>

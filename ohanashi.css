@@ -53,7 +53,7 @@ footer {
   height: 76px;
 }
 .fukidashi .name, .fukidashi .serifu {
-  font: bold 13px/15px "Arial", sans-serif;
+  font: bold 14px/17.5px "Arial", sans-serif;
   color: black;
   background-color: white;
 }
@@ -67,10 +67,15 @@ footer {
   position: absolute;
   top: 19px;
   left: 5px;
-  white-space: pre;
+  width: 214px;
+  white-space: pre-wrap;
 }
 
 textarea {
   max-width: 320px;
 }
+
+svg {
+  background: url(images/11002c9b1d8.png) repeat-y;
+  background-size: 320px, 5px;
 }

@@ -120,4 +120,100 @@ Vue.component('og-item', {
   },
 });
 
-function clone(x) { return Object.assign({}, x); }
+Vue.component('og-svg', {
+  template: '#svg-template',
+  data() {
+    return {
+      paragraphs: [],
+      unitHeight: 168,
+      wakuUrl: 'images/11006e59e67.png',
+      bgUrl: 'images/11002c9b1d8.png',
+    };
+  },
+  created() {
+    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
+  },
+  computed: {
+    height() {
+      return paragraphs.length * unitHeight;
+    },
+  },
+});
+
+Vue.component('og-canvas', {
+  template: '<canvas width=640 height="{{height}}" style="width: 320px"></canvas>',
+  replace: true,
+  data() {
+    return {
+      paragraphs: [],
+      unitHeight: 168,
+      waku: new Image('images/11006e59e67.png'),
+      wakuUrl: 'images/11006e59e67.png',
+      bgUrl: 'images/11002c9b1d8.png',
+    };
+  },
+  created() {
+    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
+    this.waku = new Image();
+    this.waku.src = this.wakuUrl;
+    this.bg = new Image();
+    this.bg.src = this.bgUrl;
+  },
+  watch: {
+    paragraphs(ps) {
+      let ctx = this.$el.getContext('2d');
+
+      // 背景
+      for (let y = 0; y < this.height; y += this.bg.height) {
+        ctx.drawImage(this.bg, 0, y);
+      }
+      // せりふ
+      ps.forEach((p, i) => {
+        let y = i * this.unitHeight;
+        // 顔
+        drawImage(p.image, 8, 8 + y);
+        // ふきだし
+        ctx.drawImage(this.waku, 174, 8 + y);
+        // なまえ
+        ctx.font = 'bold 28px/35px "Arial", sans-serif';
+        ctx.fillStyle = '#f33281';
+        ctx.fillText(p.idol.name, 184, 42 + y);
+        // せりふ
+        ctx.fillStyle = 'black';
+        let lines = wrapText(p.text, ctx, 428);
+        lines.forEach((line, j) => {
+          let ty = y + 76 + j * 35;
+          ctx.fillText(line, 184, ty);
+        });
+      });
+
+      function drawImage(url, x, y) {
+        let i = new Image();
+        i.src = url;
+        i.onload = () => ctx.drawImage(i, x, y);
+      }
+    },
+  },
+  computed: {
+    height() {
+      return this.paragraphs.length * this.unitHeight;
+    },
+  },
+});
+
+function clone(x) { return JSON.parse(JSON.stringify(x)); }
+
+function wrapText(text, ctx, width) {
+  // TODO: 改行をどうにかしよう
+  let lines = [];
+  for (let i = 1; i < text.length; ++i) {
+    let metrics = ctx.measureText(text.substring(0, i));
+    if (metrics.width > width) {
+      lines.push(text.substring(0, i - 1));
+      text = text.substring(i - 1);
+      i = 0;
+    }
+  }
+  lines.push(text);
+  return lines;
+}
