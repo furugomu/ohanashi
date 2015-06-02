@@ -75,7 +75,6 @@ textarea {
   max-width: 320px;
 }
 
-svg {
-  background: url(images/11002c9b1d8.png) repeat-y;
-  background-size: 320px, 5px;
+.nowloading {
+  text-align: center;
 }

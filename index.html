@@ -18,35 +18,30 @@
   </header>
 
   <main class="container">
+   <p class=nowloading><progress>ナウローディングプリーズウェイト</progress></p>
+  </main>
+
+  <footer>
+   <p>
+    お問い合わせは
+    <a href="https://twitter.com/furugomu">@furugomu</a>
+    へ。
+   </p>
+
+   <p>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">Tweet</a>
+    <a href="https://github.com/furugomu/ohanashi">Fork me on GitHub!!!!!!!!!!!!</a>
+   </p>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </footer>
+
+  <template id=app-template>
    <og-idols v-ref="idols"></og-idols>
    <og-faces v-ref="faces"></og-faces>
    <og-form v-ref="form"></og-form>
-   <og-list v-ref="list"></og-list>
-   <h2>できあがり</h2>
-   <og-canvas v-ref="canvas"></og-canvas>
-
-   <section>
-     <p>
-      画像内の文字は<a href="http://ipafont.ipa.go.jp/">IPAフォント</a>
-      を利用しています。
-     </p>
-   </section>
-
-   <footer>
-    <p>
-     お問い合わせは
-     <a href="https://twitter.com/furugomu">@furugomu</a>
-     へ。
-    </p>
-
-    <p>
-     <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">Tweet</a>
-     <a href="https://github.com/furugomu/ohanashi">Fork me on GitHub!!!!!!!!!!!!</a>
-    </p>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-   </footer>
-  </main>
+   <og-result v-ref="result"></og-result>
+  </template>
 
   <template id=idols-template>
     <h2>アイドルを選ぶ</h2>
@@ -101,18 +96,25 @@
     </form>
   </template>
 
-  <template id=list-template>
-    <h2>プレビュー</h2>
-    <p><label><input type=checkbox v-model="editting">編集モード</label></p>
-    <p v-if="showAlert" class="alert alert-warning">
-     スマートフォン等、環境によっては画像を保存できないことがあります。
-     長いおはなしを作る前に短いので試してください。
+  <template id=result-template>
+   <h2>できあがり</h2>
+   <p><label><input type=checkbox v-model="editting">編集モード</label></p>
+
+   <section v-show="editting"><og-list v-show="editting"></og-list></section>
+
+   <section v-show="!editting">
+    <og-canvas></og-canvas>
+    <p>
+     長押しや右クリックで画像を保存してお楽しみください。
     </p>
-    <form action="/image" method="post">
+   </section>
+  </template>
+
+  <template id=list-template>
      <div class="scenario">
       <div v-repeat="paragraphs">
        <og-item idol="{{idol}}" image="{{image}}" text="{{text}}"></og-item>
-       <div v-if="editting">
+       <div>
         <button class=btn type=button v-attr="disabled: $index === 0"
          v-on="click: moveup($index)">↑</button>
         <button class=btn type=button v-attr="disabled: $index + 1 === paragraphs.length"
@@ -122,7 +124,6 @@
        </div>
       </div>
      </div>
-    </form>
   </template>
 
   <template id=item-template>
@@ -133,15 +134,6 @@
         <pre class="serifu">{{text}}</pre>
        </div>
       </div>
-  </template>
-
-  <template id=svg-template>
-   <svg width="320" height="{{height}}" style="background: url(images/11002c9b1d8.png) repeat-y">
-    <g v-repeat="paragraphs" transform="translate(0, {{$index}} * unitHeight)">
-     <image x=4 y=4 width=76 height=76 xlink:href="{{image}}"></image>
-     <image x=87 y=4 width=224 height=76 xlink:href="{{wakuUrl}}"></image>
-    </g>
-   </svg>
   </template>
 
   <script src=jspm_packages/system.js></script>

@@ -85,6 +85,14 @@ Vue.component('og-form', {
   },
 });
 
+// できあがり
+Vue.component('og-result', {
+  template: '#result-template',
+  data() {
+    return { editting: false };
+  }
+});
+
 // 並べる
 Vue.component('og-list', {
   template: '#list-template',
@@ -93,11 +101,6 @@ Vue.component('og-list', {
   },
   created() {
     store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
-  },
-  computed: {
-    showAlert() {
-      this.paragraphs.length === 0;
-    },
   },
   methods: {
     moveup(i) {
@@ -120,26 +123,6 @@ Vue.component('og-item', {
   },
 });
 
-Vue.component('og-svg', {
-  template: '#svg-template',
-  data() {
-    return {
-      paragraphs: [],
-      unitHeight: 168,
-      wakuUrl: 'images/11006e59e67.png',
-      bgUrl: 'images/11002c9b1d8.png',
-    };
-  },
-  created() {
-    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
-  },
-  computed: {
-    height() {
-      return paragraphs.length * unitHeight;
-    },
-  },
-});
-
 Vue.component('og-canvas', {
   template: '<canvas width=640 height="{{height}}" style="width: 320px"></canvas>',
   replace: true,
@@ -147,7 +130,6 @@ Vue.component('og-canvas', {
     return {
       paragraphs: [],
       unitHeight: 168,
-      waku: new Image('images/11006e59e67.png'),
       wakuUrl: 'images/11006e59e67.png',
       bgUrl: 'images/11002c9b1d8.png',
     };
@@ -206,6 +188,7 @@ function clone(x) { return JSON.parse(JSON.stringify(x)); }
 function wrapText(text, ctx, width) {
   // TODO: 改行をどうにかしよう
   let lines = [];
+  if (!text) { return lines; }
   for (let i = 1; i < text.length; ++i) {
     let metrics = ctx.measureText(text.substring(0, i));
     if (metrics.width > width) {
