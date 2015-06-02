@@ -23,7 +23,7 @@ footer {
 
 .scenario {
   width: 320px;
-  background: black url(/images/11002c9b1d8.png) repeat-y;
+  background: black url(images/11002c9b1d8.png) repeat-y;
   background-size: 320px 5px;
   margin: 1em 0;
 }
@@ -47,7 +47,7 @@ footer {
 .fukidashi {
   position: absolute;
   right: 9px;
-  background: url(/images/11006e59e67.png) no-repeat;
+  background: url(images/11006e59e67.png) no-repeat;
   background-size: 224px 76px;
   width: 224px;
   height: 76px;
