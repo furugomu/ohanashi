@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "description": "おはなしジェネレーター for アイドルマスターミリオンライブ！",
   "scripts": {
-    "start": "browser-sync start --server --files '*.html, *.css, *.js'",
+    "start": "browser-sync start --server --files '*.html, *.css, js/*.js'",
     "build": "jspm bundle ohanashi --minify"
   },
   "author": "furugomu@gmail.com",
