@@ -92,13 +92,7 @@
     <h2>せりふを考える</h2>
     <form v-on="submit: addParagraph">
      <div class="scenario">
-      <div class="paragraph">
-       <img v-attr="src: image" class=face>
-       <div class="fukidashi">
-        <p class="name">{{idol.name}}</p>
-        <pre class="serifu">{{text}}</pre>
-       </div>
-      </div>
+      <og-item idol="{{idol}}" image="{{image}}" text="{{text}}"></og-item>
      </div>
      <p><textarea v-model="text" rows=2 cols=60></textarea></p>
      <p><button class="btn btn-default">↓追加↓</button></p>
@@ -115,13 +109,7 @@
     <form action="/image" method="post">
      <div class="scenario">
       <div v-repeat="paragraphs">
-       <div class="paragraph">
-        <img v-attr="src: image" class=face>
-        <div class="fukidashi">
-         <p class="name">{{idol.name}}</p>
-         <pre class="serifu">{{text}}</pre>
-        </div>
-       </div>
+       <og-item idol="{{idol}}" image="{{image}}" text="{{text}}"></og-item>
        <div v-if="editting">
         <button class=btn type=button v-attr="disabled: $index === 0"
          v-on="click: moveup($index)">↑</button>

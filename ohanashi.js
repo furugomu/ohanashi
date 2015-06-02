@@ -130,12 +130,6 @@ Vue.component('og-form', {
       this.text = '';
     },
   },
-  components: {
-    unko: {
-      paramAttributes: ['idol', 'image', 'text'],
-      template: '<p>unko: {{idol}}, {{image}}, {{text}}</p>',
-    }
-  },
 });
 
 // 並べる
@@ -165,6 +159,14 @@ Vue.component('og-list', {
   }
 });
 
+Vue.component('og-item', {
+  template: '#item-template',
+  props: ['idol', 'image', 'text'],
+  data() {
+    return { idol: null, image: null, text: '' };
+  },
+});
+
 let app = window.app = new Vue({
   name: 'app',
   el: 'main',
@@ -179,6 +181,5 @@ let app = window.app = new Vue({
     store.fetchIdols();
   },
 });
-
 
 function clone(x) { return Object.assign({}, x); }
