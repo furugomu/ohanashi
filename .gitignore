@@ -3,3 +3,5 @@
 /jspm_packages/*
 !/jspm_packages/system.js
 !/jspm_packages/system.js.map
+!/jspm_packages/es6-module-loader.js
+!/jspm_packages/es6-module-loader.js.map
