@@ -4,11 +4,13 @@ import Vue from 'vue';
 import store from './store';
 
 // アイドルを選ぶ
-Vue.component('og-idols', {
+export let Idols = Vue.extend({
+  name: 'idols',
   template: '#idols-template',
   data() {
     return {
       idols: [],
+      // TODO: searchType で良いと思う
       search: {type: ''},
       searchText: '',
       selectedIdol: null,
@@ -37,6 +39,7 @@ Vue.component('og-idols', {
     },
   },
 });
+Vue.component('og-idols', Idols);
 
 // 絵を選ぶ
 Vue.component('og-faces', {
