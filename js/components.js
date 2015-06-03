@@ -4,22 +4,23 @@ import Vue from 'vue';
 import store from './store';
 
 // アイドルを選ぶ
-Vue.component('og-idols', {
+export let Idols = Vue.extend({
+  name: 'idols',
   template: '#idols-template',
   data() {
     return {
       idols: [],
+      // TODO: searchType で良いと思う
       search: {type: ''},
       searchText: '',
       selectedIdol: null,
     };
   },
   created() {
-    store.$addChild(this);
-    store.$on('idols-updated', (idols) => {
+    store.on('idols-updated', (idols) => {
       this.idols = idols;
     });
-    store.$on('idol-selected', (idol) => {
+    store.on('idol-selected', (idol) => {
       this.selectedIdol = idol;
     });
   },
@@ -38,6 +39,7 @@ Vue.component('og-idols', {
     },
   },
 });
+Vue.component('og-idols', Idols);
 
 // 絵を選ぶ
 Vue.component('og-faces', {
@@ -46,7 +48,7 @@ Vue.component('og-faces', {
     return { idol: null };
   },
   created() {
-    store.$on('idol-selected', (idol) => {
+    store.on('idol-selected', (idol) => {
       this.idol = idol;
       this.select(idol.images[0]);
     });
@@ -65,11 +67,11 @@ Vue.component('og-form', {
     return { idol: null, image: null, text: '' };
   },
   created() {
-    store.$on('idol-selected', (idol) => {
+    store.on('idol-selected', (idol) => {
       this.idol = idol;
       if (!this.text) { this.text = idol['default_text']; }
     });
-    store.$on('image-selected', (url) => this.image = url);
+    store.on('image-selected', (url) => this.image = url);
   },
   computed: {
     isReady() {
@@ -100,7 +102,7 @@ Vue.component('og-list', {
     return { paragraphs: [], };
   },
   created() {
-    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
+    store.on('paragraphs-updated', (ps) => this.paragraphs = ps);
   },
   methods: {
     moveup(i) {
@@ -135,7 +137,7 @@ Vue.component('og-canvas', {
     };
   },
   created() {
-    store.$on('paragraphs-updated', (ps) => this.paragraphs = clone(ps));
+    store.on('paragraphs-updated', (ps) => this.paragraphs = ps);
     this.waku = new Image();
     this.waku.src = this.wakuUrl;
     this.bg = new Image();
@@ -183,10 +185,7 @@ Vue.component('og-canvas', {
   },
 });
 
-function clone(x) { return JSON.parse(JSON.stringify(x)); }
-
 function wrapText(text, ctx, width) {
-  // TODO: 改行をどうにかしよう
   let lines = [];
   if (!text) { return lines; }
   for (let i = 1; i < text.length; ++i) {

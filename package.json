@@ -5,17 +5,26 @@
   "description": "おはなしジェネレーター for アイドルマスターミリオンライブ！",
   "scripts": {
     "start": "browser-sync start --server --files '*.html, *.css, js/*.js'",
+    "test": "mocha --compilers js:espower-babel/guess test",
     "build": "jspm bundle js/ohanashi --minify"
   },
   "author": "furugomu@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.4.7",
     "browser-sync": "^2.7.5",
-    "jspm": "^0.15.6"
+    "espower-babel": "^3.1.1",
+    "fetch": "^0.3.6",
+    "jspm": "^0.15.6",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0",
+    "sinon": "^1.14.1",
+    "vue": "^0.12.0-rc"
   },
   "jspm": {
     "directories": {},
     "dependencies": {
+      "events": "github:jspm/nodelibs-events@^0.1.1",
       "fetch": "github:github/fetch@^0.8.2",
       "vue": "npm:vue@^0.12.0-beta4"
     },
