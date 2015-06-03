@@ -11,7 +11,7 @@ let app = window.app = new Vue({
   el: 'main',
   template: '#app-template',
   created() {
-    store.$on('idols-updated', (idols) => {
+    store.on('idols-updated', (idols) => {
       store.selectIdol(idols.find((idol) => idol.id === 'chizuru'));
     });
     store.fetchIdols();
@@ -19,7 +19,7 @@ let app = window.app = new Vue({
 });
 
 if (location.search === '?debug') {
-  store.$on('idols-updated', (idols) => {
+  store.on('idols-updated', (idols) => {
     let idol = idols[37];
     store.addParagraph(idol, idol.images[0], 'test');
     store.addParagraph(idol, idol.images[2], 'foo');

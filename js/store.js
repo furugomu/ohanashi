@@ -1,50 +1,65 @@
 "use strict";
 
 import Vue from 'vue';
+import EventEmitter from 'events';
 
 // 店
-// TODO: eventemitter に変える
-export default new Vue({
-  data: {
-    paragraphs: [/* {idol, image, text} */],
-  },
-  methods: {
-    // アイドル一覧をとってくる
-    fetchIdols() {
-      fetch('./millionstars.json')
-      .then((response) => response.json())
-      .then((idols) => {
-        this.idols = idols;
-        this.$emit('idols-updated', idols);
-      })
-      .catch((err) => alert('遺憾の意'));
-    },
-    // アイドルを選ぶ
-    selectIdol(idolOrId) {
-      let id = idolOrId.id ? idolOrId.id : idolOrId;
-      let idol = (this.idols || []).find((idol) => idol.id === id);
-      this.$emit('idol-selected', idol);
-    },
-    // 絵の URL を選ぶ
-    selectImage(url) {
-      this.$emit('image-selected', url);
-    },
-    // 追加する
-    addParagraph(idol, image, text) {
-      this.paragraphs.push({idol, image, text});
-      this.$emit('paragraphs-updated', this.paragraphs);
-    },
-    // 入れ替える
-    swapParagraphs(i, j) {
-      let t = this.paragraphs[i];
-      this.paragraphs[i] = this.paragraphs[j];
-      this.paragraphs[j] = t;
-      this.$emit('paragraphs-updated', this.paragraphs);
-    },
-    // 取り除く
-    removeParagraph(i) {
-      this.paragraphs.splice(i, 1);
-      this.$emit('paragraphs-updated', this.paragraphs);
-    },
-  },
-});
+class Store extends EventEmitter {
+  constructor() {
+    super();
+    this.data = {
+      paragraphs: [/* {idol, image, text} */],
+    };
+  }
+
+  fetchIdols() {
+    fetch('./millionstars.json')
+    .then((response) => response.json())
+    .then((idols) => {
+      this.data.idols = idols;
+      this.emit('idols-updated', clone(idols));
+    })
+    .catch((err) => alert('遺憾の意'));
+  }
+
+  // アイドルを選ぶ
+  selectIdol(idolOrId) {
+    let id = idolOrId.id ? idolOrId.id : idolOrId;
+    let idol = (this.data.idols || []).find((idol) => idol.id === id);
+    this.emit('idol-selected', clone(idol));
+  }
+
+  // 絵の URL を選ぶ
+  selectImage(url) {
+    this.emit('image-selected', clone(url));
+  }
+
+  // 追加する
+  addParagraph(idol, image, text) {
+    this.data.paragraphs.push({idol, image, text});
+    this.emit('paragraphs-updated', clone(this.data.paragraphs));
+  }
+
+  // 入れ替える
+  swapParagraphs(i, j) {
+    let ps = this.data.paragraphs;
+    let t = ps[i];
+    ps[i] = ps[j];
+    ps[j] = t;
+    this.emit('paragraphs-updated', clone(ps));
+  }
+
+  // 取り除く
+  removeParagraph(i) {
+    this.data.paragraphs.splice(i, 1);
+    this.emit('paragraphs-updated', clone(this.data.paragraphs));
+  }
+}
+
+export default new Store();
+
+function clone(x) {
+  if (typeof x !== 'object' || x === null) { return x; }
+  if (Array.isArray(x)) { return x.slice(); }
+  return Object.assign({}, x);
+}

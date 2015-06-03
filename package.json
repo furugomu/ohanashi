@@ -16,6 +16,7 @@
   "jspm": {
     "directories": {},
     "dependencies": {
+      "events": "github:jspm/nodelibs-events@^0.1.1",
       "fetch": "github:github/fetch@^0.8.2",
       "vue": "npm:vue@^0.12.0-beta4"
     },

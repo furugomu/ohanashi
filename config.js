@@ -18,6 +18,7 @@ System.config({
     "babel": "npm:babel-core@5.4.7",
     "babel-runtime": "npm:babel-runtime@5.4.7",
     "core-js": "npm:core-js@0.9.13",
+    "events": "github:jspm/nodelibs-events@0.1.1",
     "fetch": "github:github/fetch@0.8.2",
     "vue": "npm:vue@0.12.0-beta4",
     "github:jspm/nodelibs-assert@0.1.0": {
