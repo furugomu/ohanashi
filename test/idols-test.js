@@ -8,6 +8,7 @@ import {Idols} from '../js/components';
 describe('Idols', () => {
   let idols;
   beforeEach(() => idols = new Idols());
+  afterEach(() => idols.$destroy());
 
   describe('store on idols-updated', () => {
     let newIdols = [{name: '二階堂千鶴'}];

@@ -17,16 +17,22 @@ export let Idols = Vue.extend({
     };
   },
   created() {
-    store.on('idols-updated', (idols) => {
-      this.idols = idols;
-    });
-    store.on('idol-selected', (idol) => {
-      this.selectedIdol = idol;
-    });
+    store.on('idols-updated', this.onIdolsUpdated);
+    store.on('idol-selected', this.onIdolSelected);
+  },
+  destroyed() {
+    store.removeListener('idols-updated', this.onIdolsUpdated);
+    store.removeListener('idol-selected', this.onIdolSelected);
   },
   methods: {
     select(idol) {
       store.selectIdol(idol);
+    },
+    onIdolsUpdated(idols) {
+      this.idols = idols;
+    },
+    onIdolSelected(idol) {
+      this.selectedIdol = idol;
     },
   },
   filters: {
@@ -42,23 +48,29 @@ export let Idols = Vue.extend({
 Vue.component('og-idols', Idols);
 
 // 絵を選ぶ
-Vue.component('og-faces', {
+export let Faces = Vue.extend({
+  name: 'faces',
   template: '#faces-template',
   data() {
     return { idol: null };
   },
   created() {
-    store.on('idol-selected', (idol) => {
-      this.idol = idol;
-      this.select(idol.images[0]);
-    });
+    store.on('idol-selected', this.onIdolSelected);
+  },
+  destroyed() {
+    store.removeListener('idol-selected', this.onIdolSelected);
   },
   methods: {
     select(url) {
       store.selectImage(url);
     },
+    onIdolSelected(idol) {
+      this.idol = idol;
+      this.select(idol.images[0]);
+    },
   },
 });
+Vue.component('og-faces', Faces);
 
 // 文字を書く
 Vue.component('og-form', {
