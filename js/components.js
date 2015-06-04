@@ -73,17 +73,19 @@ export let Faces = Vue.extend({
 Vue.component('og-faces', Faces);
 
 // 文字を書く
-Vue.component('og-form', {
+export let Form = Vue.extend({
+  name: 'form',
   template: '#form-template',
   data() {
     return { idol: null, image: null, text: '' };
   },
   created() {
-    store.on('idol-selected', (idol) => {
-      this.idol = idol;
-      if (!this.text) { this.text = idol['default_text']; }
-    });
-    store.on('image-selected', (url) => this.image = url);
+    store.on('idol-selected', this.onIdolSelected);
+    store.on('image-selected', this.onImageSelected);
+  },
+  destroyed() {
+    store.removeListener('idol-selected', this.onIdolSelected);
+    store.removeListener('image-selected', this.onImageSelected);
   },
   computed: {
     isReady() {
@@ -96,8 +98,16 @@ Vue.component('og-form', {
       store.addParagraph(this.idol, this.image, this.text);
       this.text = '';
     },
+    onIdolSelected(idol) {
+      this.idol = idol;
+      if (!this.text) { this.text = idol['default_text']; }
+    },
+    onImageSelected(url) {
+      this.image = url;
+    },
   },
 });
+Vue.component('og-form', Form);
 
 // できあがり
 Vue.component('og-result', {
