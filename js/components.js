@@ -118,7 +118,8 @@ Vue.component('og-result', {
 });
 
 // 並べる
-Vue.component('og-list', {
+export let List = Vue.extend({
+  name: 'list',
   template: '#list-template',
   data() {
     return { paragraphs: [], };
@@ -138,6 +139,7 @@ Vue.component('og-list', {
     }
   }
 });
+Vue.component('og-list', List);
 
 Vue.component('og-item', {
   template: '#item-template',

@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import store from '../js/store';
 import {Faces} from '../js/components';
 
-describe('Idols', () => {
+describe('Faces', () => {
   let faces;
   beforeEach(() => faces = new Faces());
   afterEach(() => faces.$destroy());
