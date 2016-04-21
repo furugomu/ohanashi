@@ -1,7 +1,6 @@
 "use strict";
 
-import 'babel/polyfill';
-import 'fetch';
+import 'babel-polyfill';
 import Vue from 'vue';
 import './components';
 import store from './store';

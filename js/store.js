@@ -13,13 +13,12 @@ class Store extends EventEmitter {
   }
 
   fetchIdols() {
-    fetch('./millionstars.json')
-    .then((response) => response.json())
+    getJson('./millionstars.json')
     .then((idols) => {
       this.data.idols = idols;
       this.emit('idols-updated', clone(idols));
     })
-    .catch((err) => alert('遺憾の意'));
+    .catch((err) => alert('アイドルデータの読み込みに失敗しました: ' + err));
   }
 
   // アイドルを選ぶ
@@ -62,4 +61,15 @@ function clone(x) {
   if (typeof x !== 'object' || x === null) { return x; }
   if (Array.isArray(x)) { return x.slice(); }
   return Object.assign({}, x);
+}
+
+function getJson(url) {
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', './millionstars.json');
+  xhr.responseType = 'json';
+  xhr.send();
+  return new Promise((resolve, reject) => {
+    xhr.addEventListener('load', () => resolve(xhr.response));
+    xhr.addEventListener('error', reject);
+  });
 }
