@@ -1,8 +1,11 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
+const env = process.env.NODE_ENV || 'development';
+
+let config = module.exports = {
   entry: './js/ohanashi.js',
   output: {
     filename: 'build.js',
@@ -17,4 +20,14 @@ module.exports = {
       },
     ],
   },
+}
+
+if (env === 'development') {
+  config.devtool = '#eval';
+}
+
+if (env === 'production') {
+  config.plugins = [
+    new webpack.optimize.UglifyJsPlugin(),
+  ];
 }
