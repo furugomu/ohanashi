@@ -9,9 +9,9 @@ machine:
 
 deployment:
   production:
-    branch: branch
+    branch: master
     commands:
       - git config --global user.name "circleci"
       - git config --global user.email "furugomu@gmail.com"
-      - npm run build
+      - NODE_ENV=production npm run build
       - npm run deploy
