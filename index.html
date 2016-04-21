@@ -38,13 +38,16 @@
   </footer>
 
   <template id=app-template>
-   <og-idols v-ref="idols"></og-idols>
-   <og-faces v-ref="faces"></og-faces>
-   <og-form v-ref="form"></og-form>
-   <og-result v-ref="result"></og-result>
+   <div>
+    <og-idols v-ref:idols></og-idols>
+    <og-faces v-ref:faces></og-faces>
+    <og-form v-ref:form></og-form>
+    <og-result v-ref:result></og-result>
+   </div>
   </template>
 
   <template id=idols-template>
+   <section>
     <h2>アイドルを選ぶ</h2>
 
     <div class="form-inline">
@@ -61,72 +64,76 @@
     </div>
 
     <ul class="nav nav-pills">
-     <li v-repeat="idol: idols | search"
-      v-on="click: select(idol)"
-      v-class="active: selectedIdol === idol">
+     <li v-for="idol in idols | search"
+      @click="select(idol)"
+      :class="{active: selectedIdol === idol}">
       <a>
-       <img class="face icon select" v-attr="src: idol.images[0]">
+       <img class="face icon select" :src="idol.images[0]">
       </a>
      </li>
     </ul>
+   </section>
   </template>
 
   <template id=faces-template>
-   <div v-if="idol">
+   <div><section v-if="idol">
     <h2>表情を選ぶ</h2>
 
     <div class="tab-content">
      <div class="tab-pane active">
-      <span v-repeat="url: idol.images">
-       <img v-attr="src: url" alt="" v-on="click: select(url)" class="face select">
+      <span v-for="url in idol.images">
+       <img :src="url" alt="" @click"select(url)" class="face select">
       </span>
      </div>
     </div>
-   </div>
+   </section></div>
   </template>
 
   <template id=form-template>
-   <div v-if="isReady">
+   <div><section v-if="isReady">
     <h2>せりふを考える</h2>
-    <form v-on="submit: addParagraph">
+    <form @submit="addParagraph">
      <div class="scenario">
-      <og-item idol="{{idol}}" image="{{image}}" text="{{text}}"></og-item>
+      <og-item :idol="idol" :image="image" :text="text"></og-item>
      </div>
      <p><textarea v-model="text" rows=2 cols=60></textarea></p>
      <p><button class="btn btn-default">↓追加↓</button></p>
     </form>
+   </section></div>
   </template>
 
   <template id=result-template>
-   <h2>できあがり</h2>
-   <p><label><input type=checkbox v-model="editting">編集モード</label></p>
+   <section>
+    <h2>できあがり</h2>
+    <p><label><input type=checkbox v-model="editting">編集モード</label></p>
 
-   <section v-show="editting"><og-list v-show="editting"></og-list></section>
+    <section v-show="editting"><og-list v-show="editting"></og-list></section>
 
-   <section v-show="!editting">
-    <og-canvas v-ref=canvas></og-canvas>
-    <p>
-     長押しや右クリックで画像を保存してお楽しみください。
-    </p>
-    <p>
-     <button v-on="click: open" class="btn btn-default">
-      保存できないので画像だけを表示してみる
-     </button>
-    </p>
+    <section v-show="!editting">
+     <og-canvas v-ref:canvas></og-canvas>
+     <p>
+      長押しや右クリックで画像を保存してお楽しみください。
+     </p>
+     <p>
+      <button @click="open" class="btn btn-default">
+       保存できないので画像だけを表示してみる
+      </button>
+     </p>
+    </section>
    </section>
   </template>
 
   <template id=list-template>
      <div class="scenario">
-      <div v-repeat="paragraphs">
-       <og-item idol="{{idol}}" image="{{image}}" text="{{text}}"></og-item>
+      <div v-for="p in paragraphs">
+       <og-item :idol="p.idol" :image="p.image" :text="p.text"></og-item>
        <div>
-        <button class=btn type=button v-attr="disabled: $index === 0"
-         v-on="click: moveup($index)">↑</button>
-        <button class=btn type=button v-attr="disabled: $index + 1 === paragraphs.length"
-         v-on="click: movedown($index)">↓</button>
+        <button class=btn type=button :disabled="$index === 0"
+         @click="moveup($index)">↑</button>
+        <button class=btn type=button :disalbed="$index + 1 === paragraphs.length"
+         @click="movedown($index)">↓</button>
         <button class="btn btn-danger" type=button
-         v-on="click: remove($index)">削除</button>
+         @click="remove($index)">削除</button>
        </div>
       </div>
      </div>
@@ -134,7 +141,7 @@
 
   <template id=item-template>
       <div class="paragraph">
-       <img v-attr="src: image" class=face>
+       <img :src="image" class=face>
        <div class="fukidashi">
         <p class="name" v-if="idol">{{idol.name}}</p>
         <pre class="serifu">{{text}}</pre>

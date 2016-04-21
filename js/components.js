@@ -150,9 +150,10 @@ Vue.component('og-list', List);
 
 Vue.component('og-item', {
   template: '#item-template',
-  props: ['idol', 'image', 'text'],
-  data() {
-    return { idol: null, image: null, text: '' };
+  props: {
+    idol: {default: ()=>null},
+    image: {default: ()=>null},
+    text: {default: ()=>''},
   },
 });
 
