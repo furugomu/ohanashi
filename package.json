@@ -5,8 +5,9 @@
   "description": "おはなしジェネレーター for アイドルマスターミリオンライブ！",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --compilers js:espower-babel/guess test",
-    "build": "webpack"
+    "test": "true",
+    "build": "webpack",
+    "deploy": "git branch -D gh-pages && git checkout -b gh-pages; git add --force build.js && git commit -m :poop: && git push --force origin gh-pages"
   },
   "author": "furugomu@gmail.com",
   "license": "MIT",
