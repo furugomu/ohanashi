@@ -1,60 +1,48 @@
 import Vue from 'vue';
-import store from '../store';
+import {Ohanashi} from '../models';
 
 export default Vue.extend({
   name: 'App',
   template: '#app-template',
   data() {
     return {
-      idols: [],
+      model: new Ohanashi(),
       selectedIdol: null,
       selectedImage: null,
       paragraphs: [],
     };
   },
-  created() {
-    store.on('idols-updated', this.onIdolsUpdated);
-    store.on('idol-selected', this.onIdolSelected);
-    store.on('image-selected', this.onImageSelected);
-    store.on('paragraphs-updated', this.onParagraphsUpdated);
-    store.fetchIdols();
+  computed: {
+    idols() {
+      return this.model.idols;
+    },
+    paragraphs() {
+      return this.model.paragraphs;
+    },
   },
-  destroyed() {
-    store.removeListener('idols-updated', this.onIdolsUpdated);
-    store.removeListener('idol-selected', this.onIdolSelected);
-    store.removeListener('image-selected', this.onImageSelected);
-    store.removeListener('paragraphs-updated', this.onParagraphsUpdated);
-  },
-  methods: {
-    onIdolsUpdated(idols) {
-      this.idols = idols;
-      store.selectIdol(idols.find((idol) => idol.id === 'chizuru'));
+  watch: {
+    idols(idols) {
+      if (idols.length === 0) return;
+      if (this.selectedIdol) return;
+      this.$emit('selectIdol', idols.find((idol) => idol.id === 'chizuru'));
     },
-    onIdolSelected(idol) {
-      this.selectedIdol = idol;
-    },
-    onImageSelected(url) {
-      this.selectedImage = url;
-    },
-    onParagraphsUpdated(paragraphs) {
-      this.paragraphs = paragraphs;
-    }
   },
   events: {
     selectIdol(idol) {
-      store.selectIdol(idol);
+      this.selectedIdol = idol;
+      this.$emit('selectImage', idol.images[0]);
     },
     selectImage(url) {
-      store.selectImage(url);
+      this.selectedImage = url;
     },
     addParagraph(idol, image, text) {
-      store.addParagraph(idol, image, text);
+      this.model.addParagraph(idol, image, text);
     },
     swapParagraphs(i, j) {
-      store.swapParagraphs(i, j);
+      this.model.swapParagraphs(i, j);
     },
     removeParagraph(i) {
-      store.removeParagraph(i);
-    }
+      this.model.removeParagraph(i);
+    },
   },
 });

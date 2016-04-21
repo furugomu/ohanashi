@@ -16,6 +16,13 @@ export default Vue.extend({
       return this.idol !== null && this.image !== null;
     },
   },
+  watch: {
+    idol(idol) {
+      if (!this.text) {
+        this.text = idol['default_text'];
+      }
+    },
+  },
   methods: {
     addParagraph(event) {
       event.preventDefault();
