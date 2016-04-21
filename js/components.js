@@ -114,6 +114,13 @@ Vue.component('og-result', {
   template: '#result-template',
   data() {
     return { editting: false };
+  },
+  methods: {
+    // できあがった画像のURLを別タブで開く
+    open(event) {
+      event.preventDefault();
+      window.open(this.$.canvas.getUrl());
+    },
   }
 });
 
@@ -207,6 +214,22 @@ Vue.component('og-canvas', {
       return this.paragraphs.length * this.unitHeight;
     },
   },
+  methods: {
+    // できあがった画像の data URL を返す
+    getUrl() {
+      let canvas = this.$el;
+      // 可能なら blob にしたいがポップアップブロックされるのでこまった
+      /*
+      if (canvas.toBlob) {
+        return new Promise((resolve, reject) => {
+          // canvas が空だと blob が null になる
+          canvas.toBlob((blob) => blob ? resolve(URL.createObjectURL(blob)) : reject());
+        });
+      }
+      */
+      return canvas.toDataURL();
+    }
+  }
 });
 
 function wrapText(text, ctx, width) {

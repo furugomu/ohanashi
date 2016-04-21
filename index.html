@@ -104,9 +104,14 @@
    <section v-show="editting"><og-list v-show="editting"></og-list></section>
 
    <section v-show="!editting">
-    <og-canvas></og-canvas>
+    <og-canvas v-ref=canvas></og-canvas>
     <p>
      長押しや右クリックで画像を保存してお楽しみください。
+    </p>
+    <p>
+     <button v-on="click: open" class="btn btn-default">
+      保存できないので画像だけを表示してみる
+     </button>
     </p>
    </section>
   </template>
