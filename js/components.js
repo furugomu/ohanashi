@@ -119,7 +119,7 @@ Vue.component('og-result', {
     // できあがった画像のURLを別タブで開く
     open(event) {
       event.preventDefault();
-      window.open(this.$.canvas.getUrl());
+      window.open(this.$refs.canvas.getUrl());
     },
   }
 });
