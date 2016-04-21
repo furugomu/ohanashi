@@ -1,0 +1,17 @@
+general:
+  branches:
+    only:
+      - master
+
+machine:
+  node:
+    version: 4.4.3 # LTS
+
+deployment:
+  production:
+    branch: branch
+    commands:
+      - git config --global user.name "circleci"
+      - git config --global user.email "furugomu@gmail.com"
+      - npm run build
+      - npm run deploy
