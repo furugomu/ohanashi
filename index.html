@@ -39,10 +39,10 @@
 
   <template id=app-template>
    <div>
-    <og-idols v-ref:idols></og-idols>
-    <og-faces v-ref:faces></og-faces>
-    <og-form v-ref:form></og-form>
-    <og-result v-ref:result></og-result>
+    <og-idols v-ref:idols :idols=idols></og-idols>
+    <og-faces v-ref:faces :idol=selectedIdol></og-faces>
+    <og-form v-ref:form :idol=selectedIdol :image=selectedImage></og-form>
+    <og-result v-ref:result :paragraphs=paragraphs></og-result>
    </div>
   </template>
 
@@ -52,11 +52,11 @@
 
     <div class="form-inline">
     <span>
-     <label><input name=type type=radio v-model="search.type" value="">All</label>
-     <label><input name=type type=radio v-model="search.type" value="vo">Vo</label>
-     <label><input name=type type=radio v-model="search.type" value="da">Da</label>
-     <label><input name=type type=radio v-model="search.type" value="vi">Vi</label>
-     <label><input name=type type=radio v-model="search.type" value="ex">Ex</label>
+     <label><input name=type type=radio v-model="searchType" value="">All</label>
+     <label><input name=type type=radio v-model="searchType" value="vo">Vo</label>
+     <label><input name=type type=radio v-model="searchType" value="da">Da</label>
+     <label><input name=type type=radio v-model="searchType" value="vi">Vi</label>
+     <label><input name=type type=radio v-model="searchType" value="ex">Ex</label>
     </span>
     <label>
      <input type=search size=20 v-model="searchText" placeholder="にかいどう" class="form-control">
@@ -107,10 +107,12 @@
     <h2>できあがり</h2>
     <p><label><input type=checkbox v-model="editting">編集モード</label></p>
 
-    <section v-show="editting"><og-list v-show="editting"></og-list></section>
+    <section v-show="editting">
+      <og-list v-show="editting" :paragraphs=paragraphs></og-list>
+    </section>
 
     <section v-show="!editting">
-     <og-canvas v-ref:canvas></og-canvas>
+     <og-canvas v-ref:canvas :paragraphs=paragraphs></og-canvas>
      <p>
       長押しや右クリックで画像を保存してお楽しみください。
      </p>

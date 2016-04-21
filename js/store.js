@@ -26,10 +26,12 @@ class Store extends EventEmitter {
     let id = idolOrId.id ? idolOrId.id : idolOrId;
     let idol = (this.data.idols || []).find((idol) => idol.id === id);
     this.emit('idol-selected', clone(idol));
+    this.selectImage(idol.images[0]);
   }
 
   // 絵の URL を選ぶ
   selectImage(url) {
+    // TODO: face-selected のほうがいいんじゃないか
     this.emit('image-selected', clone(url));
   }
 

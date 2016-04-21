@@ -2,9 +2,16 @@
 
 import 'babel-polyfill';
 import Vue from 'vue';
-import './components';
+//import './components';
 import store from './store';
 
+import App from './components/app';
+import './components/register';
+
+let app = new App({
+  el: 'main',
+});
+/*
 let app = new Vue({
   name: 'app',
   el: 'main',
@@ -16,6 +23,7 @@ let app = new Vue({
     store.fetchIdols();
   },
 });
+*/
 
 export default app;
 if (typeof window !== 'undefined') { window.app = app; }
