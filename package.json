@@ -5,14 +5,14 @@
   "description": "おはなしジェネレーター for アイドルマスターミリオンライブ！",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha --require babel-register",
+    "test": "mocha --require babel-register --recursive",
     "build": "webpack",
     "deploy": "git checkout -B gh-pages; git add --force build.js && git commit -m :poop: && git push --force origin gh-pages"
   },
   "author": "furugomu@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-core": "^6.7.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.7.7",
     "babel-polyfill": "^6.7.4",
